@@ -4,13 +4,13 @@ module.exports =
           var comp = 
       webpackJsonp([4],{
 
-/***/ "./components/index/card.js":
+/***/ "./components/login/login-form.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "D:\\react-nextjs\\components\\index\\card.js";
+var _jsxFileName = "D:\\react-nextjs\\components\\login\\login-form.js";
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -20,70 +20,150 @@ var _jsxFileName = "D:\\react-nextjs\\components\\index\\card.js";
 
 
 
-var Card = function Card(props) {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    }
-  }, props.json.map(function (jsonArray, index) {
+var StatusLogin = function StatusLogin(props) {
+  if (props.status_login == 'wrong') {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-      className: "col-md-4",
-      key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 6
       }
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-      className: "card",
+      className: "alert alert-danger",
+      role: "alert",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 7
       }
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-      className: "card-img-top",
-      src: "",
-      alt: "Card image cap",
+    }, "\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\u0E14! \u0E01\u0E23\u0E38\u0E13\u0E32\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A\u0E0A\u0E37\u0E48\u0E2D\u0E1C\u0E39\u0E49\u0E43\u0E0A\u0E49\u0E2B\u0E23\u0E37\u0E2D\u0E23\u0E2B\u0E31\u0E2A\u0E1C\u0E48\u0E32\u0E19\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
-      }
-    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      }
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      }
-    }, "Card title"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      }
-    }, "test"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-      className: "btn btn-primary",
-      onClick: props.testPrint,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      }
-    }, "Go somewhere"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 10
       }
     }));
-  }));
+  } else {
+    return false;
+  }
 };
 
-var _default = Card;
+var LoginForm = function LoginForm(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "text-center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
+    src: "../../static/image/ssru00.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    }
+  }, "GE Smart Classroom"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    className: "col-md-6 offset-md-3",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(StatusLogin, {
+    status_login: props.status_login,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("select", {
+    className: "form-control",
+    style: {
+      width: '150px'
+    },
+    value: props.type,
+    onChange: props.typeChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("option", {
+    value: "student",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    }
+  }, "\u0E19\u0E31\u0E01\u0E28\u0E36\u0E01\u0E29\u0E32"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("option", {
+    value: "teacher",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    }
+  }, "\u0E2D\u0E32\u0E08\u0E32\u0E23\u0E22\u0E4C"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("option", {
+    value: "ta",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    }
+  }, "\u0E1C\u0E39\u0E49\u0E0A\u0E48\u0E27\u0E22\u0E2A\u0E2D\u0E19"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("option", {
+    value: "admin",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    }
+  }, "\u0E1C\u0E39\u0E49\u0E14\u0E39\u0E41\u0E25\u0E23\u0E30\u0E1A\u0E1A")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    value: props.username,
+    onChange: props.usernameChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+    type: "password",
+    className: "form-control",
+    value: props.password,
+    onChange: props.passwordChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+    className: "btn btn-success btn-block",
+    onClick: props.login,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    }
+  }, "\u0E40\u0E02\u0E49\u0E32\u0E2A\u0E39\u0E48\u0E23\u0E30\u0E1A\u0E1A"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    }
+  })));
+};
+
+var _default = LoginForm;
 /* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
 
@@ -96,8 +176,9 @@ var _default = Card;
     return;
   }
 
-  reactHotLoader.register(Card, "Card", "D:\\react-nextjs\\components\\index\\card.js");
-  reactHotLoader.register(_default, "default", "D:\\react-nextjs\\components\\index\\card.js");
+  reactHotLoader.register(StatusLogin, "StatusLogin", "D:\\react-nextjs\\components\\login\\login-form.js");
+  reactHotLoader.register(LoginForm, "LoginForm", "D:\\react-nextjs\\components\\login\\login-form.js");
+  reactHotLoader.register(_default, "default", "D:\\react-nextjs\\components\\login\\login-form.js");
   leaveModule(module);
 })();
 
@@ -106,13 +187,13 @@ var _default = Card;
 
 /***/ }),
 
-/***/ "./components/index/timer.js":
+/***/ "./components/login/timer.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "D:\\react-nextjs\\components\\index\\timer.js";
+var _jsxFileName = "D:\\react-nextjs\\components\\login\\timer.js";
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -134,10 +215,10 @@ var Timer = function Timer(props) {
       fileName: _jsxFileName,
       lineNumber: 6
     }
-  }, props.timer), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     }
   }));
 };
@@ -155,8 +236,8 @@ var _default = Timer;
     return;
   }
 
-  reactHotLoader.register(Timer, "Timer", "D:\\react-nextjs\\components\\index\\timer.js");
-  reactHotLoader.register(_default, "default", "D:\\react-nextjs\\components\\index\\timer.js");
+  reactHotLoader.register(Timer, "Timer", "D:\\react-nextjs\\components\\login\\timer.js");
+  reactHotLoader.register(_default, "default", "D:\\react-nextjs\\components\\login\\timer.js");
   leaveModule(module);
 })();
 
@@ -694,8 +775,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__ = __webpack_require__("./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_index_timer__ = __webpack_require__("./components/index/timer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_index_card__ = __webpack_require__("./components/index/card.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_login_timer__ = __webpack_require__("./components/login/timer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_login_login_form__ = __webpack_require__("./components/login/login-form.js");
 
 var _jsxFileName = "D:\\react-nextjs\\pages\\index.js";
 
@@ -738,9 +819,17 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (index.__proto__ || Object.getPrototypeOf(index)).call(this, props));
     _this.state = {
-      seconds: 0
+      seconds: 0,
+      status_login: '',
+      username: '',
+      password: '',
+      type: 'student'
     };
     _this.testPrint = _this.testPrint.bind(_assertThisInitialized(_this));
+    _this.usernameChange = _this.usernameChange.bind(_assertThisInitialized(_this));
+    _this.passwordChange = _this.passwordChange.bind(_assertThisInitialized(_this));
+    _this.typeChange = _this.typeChange.bind(_assertThisInitialized(_this));
+    _this.login = _this.login.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -759,6 +848,231 @@ function (_Component) {
       console.log('test');
     }
   }, {
+    key: "login",
+    value: function () {
+      var _login = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
+        var resp, data, dataStudent, _resp, _data, dataTeacher, _resp2, _data2, dataTeacherAssistant, _resp3, _data3, _dataTeacherAssistant;
+
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!(this.state.type == 'student')) {
+                  _context.next = 11;
+                  break;
+                }
+
+                _context.next = 3;
+                return fetch('http://ge-tss.ssru.ac.th/index.php/Checkinapi/studentlogin', {
+                  method: 'post',
+                  headers: {
+                    Accept: 'application/json'
+                  },
+                  body: JSON.stringify({
+                    apiKey: "afab7e2f35fe11c45116e2315e7387b6",
+                    sReturn: "1",
+                    student_username: this.state.username,
+                    student_password: this.state.password
+                  })
+                });
+
+              case 3:
+                resp = _context.sent;
+                _context.next = 6;
+                return resp.json();
+
+              case 6:
+                data = _context.sent;
+                dataStudent = data.data;
+
+                if (data.status === 1) {
+                  alert('login สำเร็จ');
+                } else {
+                  this.setState({
+                    username: ''
+                  });
+                  this.setState({
+                    password: ''
+                  });
+                  this.setState({
+                    status_login: 'wrong'
+                  });
+                }
+
+                _context.next = 42;
+                break;
+
+              case 11:
+                if (!(this.state.type == 'teacher')) {
+                  _context.next = 22;
+                  break;
+                }
+
+                _context.next = 14;
+                return fetch('http://ge-tss.ssru.ac.th/index.php/Checkinapi/teacherlogin', {
+                  method: 'post',
+                  headers: {
+                    Accept: 'application/json'
+                  },
+                  body: JSON.stringify({
+                    apiKey: "afab7e2f35fe11c45116e2315e7387b6",
+                    sReturn: "1",
+                    teacher_username: this.state.username,
+                    teacher_password: this.state.password
+                  })
+                });
+
+              case 14:
+                _resp = _context.sent;
+                _context.next = 17;
+                return _resp.json();
+
+              case 17:
+                _data = _context.sent;
+                dataTeacher = _data.data;
+
+                if (_data.status === 1) {
+                  alert('login สำเร็จ');
+                } else {
+                  this.setState({
+                    username: ''
+                  });
+                  this.setState({
+                    password: ''
+                  });
+                  this.setState({
+                    status_login: 'wrong'
+                  });
+                }
+
+                _context.next = 42;
+                break;
+
+              case 22:
+                if (!(this.state.type == 'ta')) {
+                  _context.next = 33;
+                  break;
+                }
+
+                _context.next = 25;
+                return fetch('http://ge-tss.ssru.ac.th/index.php/Checkinapi/talogin', {
+                  method: 'post',
+                  headers: {
+                    Accept: 'application/json'
+                  },
+                  body: JSON.stringify({
+                    apiKey: "afab7e2f35fe11c45116e2315e7387b6",
+                    sReturn: "1",
+                    ta_username: this.state.username,
+                    ta_password: this.state.password
+                  })
+                });
+
+              case 25:
+                _resp2 = _context.sent;
+                _context.next = 28;
+                return _resp2.json();
+
+              case 28:
+                _data2 = _context.sent;
+                dataTeacherAssistant = _data2.data;
+
+                if (_data2.status === 1) {
+                  alert('login สำเร็จ');
+                } else {
+                  this.setState({
+                    username: ''
+                  });
+                  this.setState({
+                    password: ''
+                  });
+                  this.setState({
+                    status_login: 'wrong'
+                  });
+                }
+
+                _context.next = 42;
+                break;
+
+              case 33:
+                if (!(this.state.type == 'admin')) {
+                  _context.next = 42;
+                  break;
+                }
+
+                _context.next = 36;
+                return fetch('http://ge-tss.ssru.ac.th/index.php/Checkinapi/talogin', {
+                  method: 'post',
+                  headers: {
+                    Accept: 'application/json'
+                  },
+                  body: JSON.stringify({
+                    apiKey: "afab7e2f35fe11c45116e2315e7387b6",
+                    sReturn: "1",
+                    ta_username: this.state.username,
+                    ta_password: this.state.password
+                  })
+                });
+
+              case 36:
+                _resp3 = _context.sent;
+                _context.next = 39;
+                return _resp3.json();
+
+              case 39:
+                _data3 = _context.sent;
+                _dataTeacherAssistant = _data3.data;
+
+                if (_data3.status === 1) {
+                  alert('login สำเร็จ');
+                } else {
+                  this.setState({
+                    username: ''
+                  });
+                  this.setState({
+                    password: ''
+                  });
+                  this.setState({
+                    status_login: 'wrong'
+                  });
+                }
+
+              case 42:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function login() {
+        return _login.apply(this, arguments);
+      };
+    }()
+  }, {
+    key: "usernameChange",
+    value: function usernameChange(event) {
+      this.setState({
+        username: event.target.value
+      });
+    }
+  }, {
+    key: "passwordChange",
+    value: function passwordChange(event) {
+      this.setState({
+        password: event.target.value
+      });
+    }
+  }, {
+    key: "typeChange",
+    value: function typeChange(event) {
+      this.setState({
+        type: event.target.value
+      });
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -770,6 +1084,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.state.status_login);
+      console.log(this.state.type);
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "container",
         style: {
@@ -777,16 +1093,35 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 186
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_index_card__["a" /* default */], {
-        json: this.props.json,
-        testPrint: this.testPrint,
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 189
         }
-      }));
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "col-md-12",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 191
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
+        message: this.props.message,
+        username: this.state.username,
+        password: this.state.password,
+        usernameChange: this.usernameChange,
+        passwordChange: this.passwordChange,
+        type: this.state.type,
+        typeChange: this.typeChange,
+        status_login: this.state.status_login,
+        login: this.login,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 193
+        }
+      }))));
     }
   }, {
     key: "__reactstandin__regenerateByEval",
@@ -800,32 +1135,34 @@ function (_Component) {
     value: function () {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
-      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
-        var res, json;
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
+        var res, json, message;
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
-                _context.next = 2;
+                _context2.next = 2;
                 return fetch('https://jsonplaceholder.typicode.com/posts');
 
               case 2:
-                res = _context.sent;
-                _context.next = 5;
+                res = _context2.sent;
+                _context2.next = 5;
                 return res.json();
 
               case 5:
-                json = _context.sent;
-                return _context.abrupt("return", {
-                  json: json
+                json = _context2.sent;
+                message = "hello";
+                return _context2.abrupt("return", {
+                  json: json,
+                  message: message
                 });
 
-              case 7:
+              case 8:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee, this);
+        }, _callee2, this);
       }));
 
       return function getInitialProps() {
