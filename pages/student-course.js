@@ -5,14 +5,33 @@ export default class studentCourse extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        };
 
+        };
 
     }
 
+    async componentDidMount() {
+
+        const isStudent =   localStorage.getItem("isStudent");
+
+        if(isStudent == 'true'){
+            this.setState({statusLogin : 'true'});
+        }
+
+        else{
+            return false;
+        }
+    }
+
+
+
     render () {
 
+
+
         return (
+
+
 
             <div className="container" style={{'paddingTop':'80px'}}>
 

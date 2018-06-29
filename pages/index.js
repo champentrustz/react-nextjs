@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'isomorphic-fetch'
 import Timer from '../components/login/timer'
 import LoginForm from '../components/login/login-form'
+import Router from 'next/router'
 
 export default class index extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class index extends Component {
             username : '',
             password : '',
             type : 'student',
+
         };
         this.testPrint = this.testPrint.bind(this);
         this.usernameChange = this.usernameChange.bind(this);
@@ -60,7 +62,8 @@ export default class index extends Component {
                 localStorage.setItem('studentUsername', this.state.username);
                 localStorage.setItem('studentPassword', this.state.password);
                 localStorage.setItem('studentGender', dataStudent.studentGender);
-                window.open('/student-course', "_self");
+                this.props.checkLogin('true');
+                Router.push('/student-course');
 
             }
             else{
@@ -189,6 +192,7 @@ export default class index extends Component {
 
     render () {
 
+
         return (
 
                 <div className="container" style={{'paddingTop':'80px'}}>
@@ -200,7 +204,8 @@ export default class index extends Component {
 
                             <LoginForm message={this.props.message} username={this.state.username} password={this.state.password}
                             usernameChange={this.usernameChange} passwordChange={this.passwordChange} type={this.state.type}
-                            typeChange={this.typeChange} status_login={this.state.status_login} login={this.login}/>
+                            typeChange={this.typeChange} status_login={this.state.status_login} login={this.login}
+                           />
 
 
                         </div>

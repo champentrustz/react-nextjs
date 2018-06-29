@@ -275,6 +275,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_login_timer__ = __webpack_require__("./components/login/timer.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_login_login_form__ = __webpack_require__("./components/login/login-form.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_next_router__);
 
 var _jsxFileName = "D:\\react-nextjs\\pages\\index.js";
 
@@ -293,6 +295,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -386,7 +389,8 @@ function (_Component) {
                   localStorage.setItem('studentUsername', this.state.username);
                   localStorage.setItem('studentPassword', this.state.password);
                   localStorage.setItem('studentGender', dataStudent.studentGender);
-                  window.open('/student-course', "_self");
+                  this.props.checkLogin('true');
+                  __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/student-course');
                 } else {
                   this.setState({
                     username: ''
@@ -589,19 +593,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 198
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 201
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 203
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
         message: this.props.message,
@@ -615,7 +619,7 @@ function (_Component) {
         login: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 205
         }
       }))));
     }
@@ -686,6 +690,13 @@ module.exports = require("@babel/runtime/regenerator");
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
+
+/***/ }),
+
+/***/ "next/router":
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
