@@ -23,7 +23,7 @@ const LoginForm = (props) => {
     return (
        <div className="text-center">
            <img src="../../static/image/ssru00.png"/>
-           <h1>GE Smart Classroom</h1>
+           <h2>GE Smart Classroom</h2>
            <br/>
            <div className="col-md-6 offset-md-3">
 

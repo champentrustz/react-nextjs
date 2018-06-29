@@ -8,7 +8,7 @@ class Header extends React.Component {
         return (
             <div>
                 <Head>
-                    <title>GE Smart Class Room</title>
+                    <title>GE Smart Classroom</title>
 
                     <link rel="stylesheet"
                           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
