@@ -51,7 +51,7 @@ class Navbar extends React.Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <Link href="/">
-                    <a className="navbar-brand">GE Smart Class Room</a>
+                    <a className="navbar-brand">GE Smart Classroom</a>
                     </Link>
 
                 </nav>
