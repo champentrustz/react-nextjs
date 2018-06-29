@@ -888,7 +888,13 @@ function (_Component) {
                 dataStudent = data.data;
 
                 if (data.status === 1) {
-                  alert('login สำเร็จ');
+                  localStorage.setItem('isStudent', 'true');
+                  localStorage.setItem('studentFirstName', dataStudent.studentName);
+                  localStorage.setItem('studentLastName', dataStudent.studentLastname);
+                  localStorage.setItem('studentUsername', this.state.username);
+                  localStorage.setItem('studentPassword', this.state.password);
+                  localStorage.setItem('studentGender', dataStudent.studentGender);
+                  window.open('/student-course', "_self");
                 } else {
                   this.setState({
                     username: ''
@@ -1091,19 +1097,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 194
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 197
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 199
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
         message: this.props.message,
@@ -1117,7 +1123,7 @@ function (_Component) {
         login: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 201
         }
       }))));
     }

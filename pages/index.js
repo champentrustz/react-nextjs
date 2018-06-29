@@ -53,7 +53,15 @@ export default class index extends Component {
             const dataStudent = data.data;
 
             if (data.status === 1) {
-                alert('login สำเร็จ');
+
+                localStorage.setItem('isStudent', 'true');
+                localStorage.setItem('studentFirstName', dataStudent.studentName);
+                localStorage.setItem('studentLastName', dataStudent.studentLastname);
+                localStorage.setItem('studentUsername', this.state.username);
+                localStorage.setItem('studentPassword', this.state.password);
+                localStorage.setItem('studentGender', dataStudent.studentGender);
+                window.open('/student-course', "_self");
+
             }
             else{
                 this.setState({username: ''});
@@ -165,6 +173,7 @@ export default class index extends Component {
         this.interval = setInterval(() => this.tick(), 1000);
     }
 
+
     static async getInitialProps () {
 
         const res = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -176,6 +185,7 @@ export default class index extends Component {
             message
         }
     }
+
 
     render () {
 

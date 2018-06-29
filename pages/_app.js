@@ -40,7 +40,41 @@ class Header extends React.Component {
     }
 }
 
+const ButtonLogin = (props) => {
+    if(props.statusLogin == 'true') {
+        return (
+            <div>
+                &nbsp;
+                &nbsp;
+                <button className="btn btn-danger btn-sm" onClick={props.logout}>
+                   ออกจากระบบ
+                </button>
+            </div>
+        )
+    }
+    else{
+        return false;
+    }
+}
+
+
+
 class Navbar extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+
+        this.logout = this.logout.bind(this)
+
+    }
+
+    logout(){
+        localStorage.clear();
+        window.location.replace("/");
+    }
+
     render () {
         return (
             <div>
@@ -54,6 +88,14 @@ class Navbar extends React.Component {
                     <a className="navbar-brand">GE Smart Classroom</a>
                     </Link>
 
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                        </ul>
+                        <h6 className="text-light" style={{'margin-top':'10px'}}>{this.props.studentFirstName} {this.props.studentLastName}</h6>
+                        <ButtonLogin statusLogin={this.props.statusLogin} logout={this.logout}/>
+                    </div>
+
                 </nav>
             </div>
         )
@@ -61,11 +103,42 @@ class Navbar extends React.Component {
 }
 
 export default class MyApp extends App {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            statusLogin : '',
+            studentFirstName: '',
+            studentLastName : '',
+        };
+
+
+    }
+
+
+   async componentDidMount() {
+
+        const isStudent =  await localStorage.getItem("isStudent");
+
+        if(isStudent == 'true'){
+            const studentFirstName = await localStorage.getItem("studentFirstName");
+            const studentLastName = await localStorage.getItem("studentLastName");
+            this.setState({studentFirstName : studentFirstName});
+            this.setState({studentLastName : studentLastName});
+            this.setState({statusLogin : 'true'});
+        }
+
+        else{
+            return false;
+        }
+    }
+
     render () {
         const {Component, pageProps} = this.props
         return <Container>
             <Header/>
-            <Navbar/>
+            <Navbar studentFirstName={this.state.studentFirstName} studentLastName={this.state.studentLastName}
+            statusLogin={this.state.statusLogin}/>
                 <Component {...pageProps} />
         </Container>
     }
