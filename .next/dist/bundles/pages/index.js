@@ -119,7 +119,7 @@ var LoginForm = function LoginForm(props) {
       fileName: _jsxFileName,
       lineNumber: 25
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
@@ -576,8 +576,6 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state.status_login);
-      console.log(this.state.type);
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "container",
         style: {
@@ -585,19 +583,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 184
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 187
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 189
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
         message: this.props.message,
@@ -611,7 +609,7 @@ function (_Component) {
         login: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 191
         }
       }))));
     }
