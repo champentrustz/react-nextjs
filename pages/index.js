@@ -172,8 +172,17 @@ export default class index extends Component {
     }
 
 
-    componentDidMount() {
-        this.interval = setInterval(() => this.tick(), 1000);
+    async componentDidMount() {
+
+        const isStudent =   localStorage.getItem("isStudent");
+
+        if(isStudent == 'true'){
+            Router.push('/student-course')
+        }
+
+        else{
+            return false;
+        }
     }
 
 

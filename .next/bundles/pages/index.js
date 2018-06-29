@@ -1092,13 +1092,41 @@ function (_Component) {
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
+        var isStudent;
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                isStudent = localStorage.getItem("isStudent");
 
-      this.interval = setInterval(function () {
-        return _this2.tick();
-      }, 1000);
-    }
+                if (!(isStudent == 'true')) {
+                  _context2.next = 5;
+                  break;
+                }
+
+                __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/student-course');
+                _context2.next = 6;
+                break;
+
+              case 5:
+                return _context2.abrupt("return", false);
+
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      return function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      };
+    }()
   }, {
     key: "render",
     value: function render() {
@@ -1109,19 +1137,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 207
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 210
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 203
+          lineNumber: 212
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
         message: this.props.message,
@@ -1135,7 +1163,7 @@ function (_Component) {
         login: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205
+          lineNumber: 214
         }
       }))));
     }
@@ -1151,34 +1179,34 @@ function (_Component) {
     value: function () {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
-      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee3() {
         var res, json, message;
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
-                _context2.next = 2;
+                _context3.next = 2;
                 return fetch('https://jsonplaceholder.typicode.com/posts');
 
               case 2:
-                res = _context2.sent;
-                _context2.next = 5;
+                res = _context3.sent;
+                _context3.next = 5;
                 return res.json();
 
               case 5:
-                json = _context2.sent;
+                json = _context3.sent;
                 message = "hello";
-                return _context2.abrupt("return", {
+                return _context3.abrupt("return", {
                   json: json,
                   message: message
                 });
 
               case 8:
               case "end":
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee3, this);
       }));
 
       return function getInitialProps() {

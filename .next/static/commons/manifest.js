@@ -90,7 +90,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fb60dbc199deee1fae66"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "670f8de395dc29fbb9a0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -755,7 +755,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_app.js","2":"bundles\\pages\\_error.js","4":"bundles\\pages\\index.js","5":"bundles\\pages\\student-course.js"}[chunkId]||chunkId) + "-" + {"0":"afd80e60608f4b8508fa","1":"53e3561175de78c1bdd4","2":"e41e584d9e8804421e4c","4":"23c647d76edbfd468ab4","5":"a3c58c00a42a47bda5f4"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_app.js","2":"bundles\\pages\\_error.js","4":"bundles\\pages\\index.js","5":"bundles\\pages\\student-course.js"}[chunkId]||chunkId) + "-" + {"0":"afd80e60608f4b8508fa","1":"53e3561175de78c1bdd4","2":"e41e584d9e8804421e4c","4":"e27a74dab0cc128cf806","5":"09add44eb01d3cd29d6f"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
