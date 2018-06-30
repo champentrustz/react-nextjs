@@ -2,44 +2,220 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95cae074-ab1f-4827-a76a-c3494307207d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/components/admin/button-update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/admin/tabs-menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/1.f5a8770a6cd8a383d0e3.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/1.f5a8770a6cd8a383d0e3.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/5.50ce68bcabc3ccc8ec81.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/5.50ce68bcabc3ccc8ec81.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/50ce68bcabc3ccc8ec81.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/5b2385f77c5319070bc4.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/9017ad7fde2d194dea83.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/9e150d237c0dd3bf88f0.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/07592fac91339a1f90d8.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/08f602736f64755bb4eb.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.08f602736f64755bb4eb.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.08f602736f64755bb4eb.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.1638209c1c2e9ce4c98d.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.1638209c1c2e9ce4c98d.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.1833e8846656d0ab8b4e.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.1833e8846656d0ab8b4e.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.212c090b8d1234e77c1b.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.212c090b8d1234e77c1b.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.2478f44d48590856c55e.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.2478f44d48590856c55e.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.250048e29452a2186d50.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.250048e29452a2186d50.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.2683432897b959c5c137.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.2683432897b959c5c137.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.299d8bfbd3bc88e42038.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.299d8bfbd3bc88e42038.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.2b9be113cd28b6945d00.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.2b9be113cd28b6945d00.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.4447a1694229b56f73a1.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.4447a1694229b56f73a1.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.47e09775b49ab4b15b0f.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.47e09775b49ab4b15b0f.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.51e9923228bbaca08712.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.51e9923228bbaca08712.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.52bb0be571c74ad67904.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.52bb0be571c74ad67904.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.6cd650bd12a211b3218e.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.6cd650bd12a211b3218e.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.6e7674813ae3406cbb48.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.6e7674813ae3406cbb48.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.77cc645a2f7b1ce17a9f.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.77cc645a2f7b1ce17a9f.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.7d9167c4d115e3dbcd38.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.7d9167c4d115e3dbcd38.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.81f07135db14bf4545cf.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.81f07135db14bf4545cf.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.8222afa0f186e5212a8f.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.8222afa0f186e5212a8f.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.8ee1081e987005a4e69e.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.8ee1081e987005a4e69e.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.996a5cafa9eacb65bddc.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.996a5cafa9eacb65bddc.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9af83325e8c58e3ed0c4.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9af83325e8c58e3ed0c4.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9c96f4259ac5567c124c.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9c96f4259ac5567c124c.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9cc5ffdeeacb05e1270f.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9cc5ffdeeacb05e1270f.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9d8840d5440bb49d6882.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9d8840d5440bb49d6882.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9f115bb9d8f0ef4b852a.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.9f115bb9d8f0ef4b852a.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.a28d3a8fbbf4c175c48d.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.a28d3a8fbbf4c175c48d.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.ae9c43330cfc9813c332.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.ae9c43330cfc9813c332.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.c4a3069bf805848a5447.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.c4a3069bf805848a5447.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.cb22b598ccc8091eceb7.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.cb22b598ccc8091eceb7.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.cbbc420b16024e99738e.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.cbbc420b16024e99738e.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.df01f330d9ca05aa72e7.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1.df01f330d9ca05aa72e7.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1638209c1c2e9ce4c98d.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/1833e8846656d0ab8b4e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/212c090b8d1234e77c1b.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/2478f44d48590856c55e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/250048e29452a2186d50.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/2649be786fa12a355ec0.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/2683432897b959c5c137.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/299d8bfbd3bc88e42038.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/2af1f576ef0e65781183.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/2b9be113cd28b6945d00.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/3b33eae30f32188ce048.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/3fc7dc43d033612a8336.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/4.6c0b1ff25970d361f8b5.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/4.6c0b1ff25970d361f8b5.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/4.d759fdb167a781469e42.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/4.d759fdb167a781469e42.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/4447a1694229b56f73a1.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/46d2685b5ef9022f75f2.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/47e09775b49ab4b15b0f.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.3fc7dc43d033612a8336.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.3fc7dc43d033612a8336.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.ac11a6cb5065a3b9dbd0.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.ac11a6cb5065a3b9dbd0.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.c4a3069bf805848a5447.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.c4a3069bf805848a5447.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.df01f330d9ca05aa72e7.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5.df01f330d9ca05aa72e7.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/51e9923228bbaca08712.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/52bb0be571c74ad67904.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/530b4423e5044deeab01.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/5d20ac19dc1629bd782e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.08f602736f64755bb4eb.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.08f602736f64755bb4eb.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.1638209c1c2e9ce4c98d.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.1638209c1c2e9ce4c98d.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.2649be786fa12a355ec0.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.2649be786fa12a355ec0.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.3b33eae30f32188ce048.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.3b33eae30f32188ce048.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.530b4423e5044deeab01.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.530b4423e5044deeab01.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.5d20ac19dc1629bd782e.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.5d20ac19dc1629bd782e.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.63ed96eabbeff612461d.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.63ed96eabbeff612461d.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.68693f2c84fc402078c8.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.68693f2c84fc402078c8.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.81f07135db14bf4545cf.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.81f07135db14bf4545cf.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.99d684649752647f05d8.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.99d684649752647f05d8.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.9cc5ffdeeacb05e1270f.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.9cc5ffdeeacb05e1270f.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.9d85dd85d171197e21c0.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.9d85dd85d171197e21c0.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.a171132a217c54fed6aa.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.a171132a217c54fed6aa.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.aa4b47e5c07f5c5d42b0.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.aa4b47e5c07f5c5d42b0.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.aaf312bde0800e4bff30.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.aaf312bde0800e4bff30.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.ae7e08e30261bc075e0c.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.ae7e08e30261bc075e0c.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.ba8c33d9c05545931fee.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.ba8c33d9c05545931fee.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.c05704f07c9c9b34d1ee.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.c05704f07c9c9b34d1ee.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.c4067be321692bb03cf5.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.c4067be321692bb03cf5.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.caefd5fa7615d0164ecf.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.caefd5fa7615d0164ecf.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.cb22b598ccc8091eceb7.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.cb22b598ccc8091eceb7.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.d6e659f5561f25b0b4f6.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.d6e659f5561f25b0b4f6.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.e81e3ebd9026f8caf1bf.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.e81e3ebd9026f8caf1bf.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.f10a504347e98513fd78.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.f10a504347e98513fd78.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.f360f9a1934cedaaa10a.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6.f360f9a1934cedaaa10a.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/63ed96eabbeff612461d.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/68693f2c84fc402078c8.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6c0b1ff25970d361f8b5.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6cd650bd12a211b3218e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6e7674813ae3406cbb48.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/6fafc1b7614cdeb8f89e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/77cc645a2f7b1ce17a9f.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/7d9167c4d115e3dbcd38.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/81f07135db14bf4545cf.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/8222afa0f186e5212a8f.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/8ab37e6728ae972ba56e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/8ee1081e987005a4e69e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/996a5cafa9eacb65bddc.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/99d684649752647f05d8.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/9af83325e8c58e3ed0c4.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/9c96f4259ac5567c124c.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/9cc5ffdeeacb05e1270f.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/9d85dd85d171197e21c0.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/9d8840d5440bb49d6882.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/9f115bb9d8f0ef4b852a.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/a171132a217c54fed6aa.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/a28d3a8fbbf4c175c48d.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/aa4b47e5c07f5c5d42b0.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/aaf312bde0800e4bff30.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/ab1da8e5265a21b3ff95.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/ac11a6cb5065a3b9dbd0.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/ae7e08e30261bc075e0c.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/ae9c43330cfc9813c332.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/ba8c33d9c05545931fee.hot-update.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/build-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/bundles/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/bundles/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/bundles/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/bundles/pages/_app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/bundles/pages/admin.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/bundles/pages/admin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/bundles/pages/admin.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/bundles/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/bundles/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/bundles/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/bundles/pages/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/bundles/pages/teacher-course.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/e4d15c1cfe7429892e70.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/f5a8770a6cd8a383d0e3.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/bundles/pages/student-course.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/bundles/pages/student-course.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/bundles/pages/student-course.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/c05704f07c9c9b34d1ee.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/c4067be321692bb03cf5.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/c4a3069bf805848a5447.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/c785daa9cecaa01fd041.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/caefd5fa7615d0164ecf.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cb22b598ccc8091eceb7.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cbbc420b16024e99738e.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/d6e659f5561f25b0b4f6.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/d759fdb167a781469e42.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/df01f330d9ca05aa72e7.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/e81e3ebd9026f8caf1bf.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/f10a504347e98513fd78.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/f1480502ffdea07dc256.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/f360f9a1934cedaaa10a.hot-update.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/_app.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/_document.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/_document.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/_error.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/admin.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/admin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/admin.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/teacher-course.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/student-course.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/bundles/pages/student-course.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/bundles/pages/student-course.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/pages-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/static/commons/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/commons/manifest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/static/commons/manifest.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/commons/manifest.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/admin/button-update.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/admin/button-update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/login/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/login/login-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/student-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/student-course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ta-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ta-course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/teacher-course.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/teacher-course.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,8 +232,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="2">
+              <caret line="208" column="9" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -65,20 +241,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login-form.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/login/login-form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+            <state relative-caret-position="85">
+              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -87,7 +254,7 @@
         <entry file="file://$PROJECT_DIR$/pages/student-course.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -95,11 +262,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher-course.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teacher-course.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/teacher-course.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -110,8 +277,8 @@
       <file leaf-file-name="_app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/_app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1226">
-              <caret line="247" column="98" selection-start-line="247" selection-start-column="98" selection-end-line="247" selection-end-column="98" />
+            <state relative-caret-position="73">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -134,8 +301,8 @@
       <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="221">
+              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -143,9 +310,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="timer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/login/timer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" selection-start-line="5" selection-start-column="12" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="button-update.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/admin/button-update.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="16" column="27" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tabs-menu.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/admin/tabs-menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -169,8 +358,10 @@
       <find>style</find>
       <find>login</find>
       <find>console</find>
-      <find>logout</find>
       <find>checkLogin</find>
+      <find>logout</find>
+      <find>isLogin</find>
+      <find>/student-course</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,17 +381,18 @@
         <option value="$PROJECT_DIR$/pages/login.js" />
         <option value="$PROJECT_DIR$/components/login/timer.js" />
         <option value="$PROJECT_DIR$/components/login/status-login.js" />
-        <option value="$PROJECT_DIR$/components/login/login-form.js" />
         <option value="$PROJECT_DIR$/pages/student.js" />
         <option value="$PROJECT_DIR$/components/navbar/navbar.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/components/admin/button-update.js" />
-        <option value="$PROJECT_DIR$/pages/_app.js" />
-        <option value="$PROJECT_DIR$/pages/index.js" />
         <option value="$PROJECT_DIR$/pages/student-course.js" />
-        <option value="$PROJECT_DIR$/pages/admin.js" />
         <option value="$PROJECT_DIR$/pages/ta-course.js" />
         <option value="$PROJECT_DIR$/pages/teacher-course.js" />
+        <option value="$PROJECT_DIR$/components/login/login-form.js" />
+        <option value="$PROJECT_DIR$/pages/index.js" />
+        <option value="$PROJECT_DIR$/pages/_app.js" />
+        <option value="$PROJECT_DIR$/components/admin/button-update.js" />
+        <option value="$PROJECT_DIR$/pages/admin.js" />
+        <option value="$PROJECT_DIR$/components/admin/tabs-menu.js" />
       </list>
     </option>
   </component>
@@ -320,15 +512,16 @@
       <workItem from="1529837246723" duration="9605000" />
       <workItem from="1529920935259" duration="116000" />
       <workItem from="1530274263969" duration="19522000" />
-      <workItem from="1530347755239" duration="5837000" />
+      <workItem from="1530347755239" duration="11244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51161000" />
+    <option name="totallyTimeSpent" value="56568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1312" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2488226" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -377,13 +570,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/login/timer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -585,22 +771,12 @@
     <entry file="file://$PROJECT_DIR$/components/login/status-login.js" />
     <entry file="file://$PROJECT_DIR$/pages/about.js" />
     <entry file="file://$PROJECT_DIR$/components/navbar/navbar.js" />
-    <entry file="file://$PROJECT_DIR$/components/login/timer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/admin/button-update.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@babel/runtime/helpers/asyncToGenerator.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -613,53 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/login/login-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1226">
-          <caret line="247" column="98" selection-start-line="247" selection-start-column="98" selection-end-line="247" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/student-course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,10 +805,78 @@
     <entry file="file://$PROJECT_DIR$/pages/teacher-course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login/timer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="5" selection-start-column="12" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/student-course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/login/login-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/_app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/admin/button-update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="16" column="27" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="208" column="9" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/admin/tabs-menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>

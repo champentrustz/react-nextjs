@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/', function() {
           var comp =
-      webpackJsonp([5],{
+      webpackJsonp([4],{
 
 /***/ "./components/login/login-form.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -39,7 +39,7 @@ var StatusLogin = function StatusLogin(props) {
 
 var LoginForm = function LoginForm(props) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-    className: "text-center",
+    className: "col-md-12 text-center",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
@@ -1053,26 +1053,59 @@ function (_Component) {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
       __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
-        var isStudent;
+        var isStudent, isTeacher, isTeacherAssistant, isAdmin;
         return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 isStudent = localStorage.getItem("isStudent");
+                isTeacher = localStorage.getItem("isTeacher");
+                isTeacherAssistant = localStorage.getItem("isTeacherAssistant");
+                isAdmin = localStorage.getItem("isAdmin");
 
                 if (!(isStudent == 'true')) {
-                  _context2.next = 5;
+                  _context2.next = 8;
                   break;
                 }
 
                 __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/student-course');
-                _context2.next = 6;
+                _context2.next = 21;
                 break;
 
-              case 5:
+              case 8:
+                if (!(isTeacher == 'true')) {
+                  _context2.next = 12;
+                  break;
+                }
+
+                __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/teacher-course');
+                _context2.next = 21;
+                break;
+
+              case 12:
+                if (!(isTeacherAssistant == 'true')) {
+                  _context2.next = 16;
+                  break;
+                }
+
+                __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/ta-course');
+                _context2.next = 21;
+                break;
+
+              case 16:
+                if (!(isAdmin == 'true')) {
+                  _context2.next = 20;
+                  break;
+                }
+
+                __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/admin');
+                _context2.next = 21;
+                break;
+
+              case 20:
                 return _context2.abrupt("return", false);
 
-              case 6:
+              case 21:
               case "end":
                 return _context2.stop();
             }
@@ -1094,19 +1127,13 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225
+          lineNumber: 238
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "col-md-12",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 241
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
         message: this.props.message,
@@ -1120,9 +1147,9 @@ function (_Component) {
         login: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 244
         }
-      }))));
+      })));
     }
   }], [{
     key: "getInitialProps",
@@ -1191,7 +1218,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.js");
@@ -1199,7 +1226,7 @@ module.exports = __webpack_require__("./pages/index.js");
 
 /***/ })
 
-},[4])
+},[3])
           return { page: comp.default }
         })
       ;

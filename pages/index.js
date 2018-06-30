@@ -193,9 +193,22 @@ export default class index extends Component {
     async componentDidMount() {
 
         const isStudent =   localStorage.getItem("isStudent");
+        const isTeacher =   localStorage.getItem("isTeacher");
+        const isTeacherAssistant =   localStorage.getItem("isTeacherAssistant");
+        const isAdmin =   localStorage.getItem("isAdmin");
+
 
         if(isStudent == 'true'){
             Router.push('/student-course')
+        }
+        else if(isTeacher == 'true'){
+            Router.push('/teacher-course')
+        }
+        else if(isTeacherAssistant == 'true'){
+            Router.push('/ta-course')
+        }
+        else if(isAdmin == 'true'){
+            Router.push('/admin')
         }
 
         else{
@@ -227,7 +240,6 @@ export default class index extends Component {
 
                     <div className="row">
 
-                        <div className="col-md-12">
 
                             <LoginForm message={this.props.message} username={this.state.username} password={this.state.password}
                             usernameChange={this.usernameChange} passwordChange={this.passwordChange} type={this.state.type}
@@ -235,7 +247,6 @@ export default class index extends Component {
                            />
 
 
-                        </div>
 
 
                     </div>
