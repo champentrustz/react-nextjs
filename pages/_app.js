@@ -80,7 +80,7 @@ class Navbar extends React.Component {
                         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
 
                         </ul>
-                        <h6 className="text-light" style={{'margin-top':'10px'}}>{this.props.studentFirstName} {this.props.studentLastName}</h6>
+                        <h6 className="text-light" style={{'margin-top':'10px'}}>{this.props.firstName} {this.props.lastName}</h6>
                         <ButtonLogin statusLogin={this.props.statusLogin} logout={this.props.logout}/>
                     </div>
 
@@ -96,8 +96,8 @@ export default class MyApp extends App {
         super(props);
         this.state = {
             statusLogin : '',
-            studentFirstName: '',
-            studentLastName : '',
+            firstName: '',
+            lastName : '',
         };
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);
@@ -108,12 +108,36 @@ export default class MyApp extends App {
     checkLogin(status){
 
         const isStudent =   localStorage.getItem("isStudent");
+        const isTeacher =   localStorage.getItem("isTeacher");
+        const isTeacherAssistant =   localStorage.getItem("isTeacherAssistant");
+        const isAdmin =   localStorage.getItem("isAdmin");
 
         if(isStudent == 'true'){
-            const studentFirstName =  localStorage.getItem("studentFirstName");
-            const studentLastName =  localStorage.getItem("studentLastName");
-            this.setState({studentFirstName : studentFirstName});
-            this.setState({studentLastName : studentLastName});
+            const firstName =  localStorage.getItem("studentFirstName");
+            const lastName =  localStorage.getItem("studentLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
+            this.setState({statusLogin : status});
+        }
+        else if(isTeacher == 'true'){
+            const firstName =  localStorage.getItem("teacherFirstName");
+            const lastName =  localStorage.getItem("teacherLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
+            this.setState({statusLogin : status});
+        }
+        else if(isTeacherAssistant == 'true'){
+            const firstName =  localStorage.getItem("teacherAssistantFirstName");
+            const lastName =  localStorage.getItem("teacherAssistantLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
+            this.setState({statusLogin : status});
+        }
+        else if(isAdmin == 'true'){
+            const firstName =  localStorage.getItem("adminFirstName");
+            const lastName =  localStorage.getItem("adminLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
             this.setState({statusLogin : status});
         }
 
@@ -126,12 +150,36 @@ export default class MyApp extends App {
     async componentDidMount() {
 
         const isStudent =   localStorage.getItem("isStudent");
+        const isTeacher =   localStorage.getItem("isTeacher");
+        const isTeacherAssistant =   localStorage.getItem("isTeacherAssistant");
+        const isAdmin =   localStorage.getItem("isAdmin");
 
         if(isStudent == 'true'){
-            const studentFirstName =  localStorage.getItem("studentFirstName");
-            const studentLastName =  localStorage.getItem("studentLastName");
-            this.setState({studentFirstName : studentFirstName});
-            this.setState({studentLastName : studentLastName});
+            const firstName =  localStorage.getItem("studentFirstName");
+            const lastName =  localStorage.getItem("studentLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
+            this.setState({statusLogin : 'true'});
+        }
+        else if(isTeacher == 'true'){
+            const firstName =  localStorage.getItem("teacherFirstName");
+            const lastName =  localStorage.getItem("teacherLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
+            this.setState({statusLogin : 'true'});
+        }
+        else if(isTeacherAssistant == 'true'){
+            const firstName =  localStorage.getItem("teacherAssistantFirstName");
+            const lastName =  localStorage.getItem("teacherAssistantLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
+            this.setState({statusLogin : 'true'});
+        }
+        else if(isAdmin == 'true'){
+            const firstName =  localStorage.getItem("adminFirstName");
+            const lastName =  localStorage.getItem("adminLastName");
+            this.setState({firstName : firstName});
+            this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
         }
 
@@ -142,8 +190,8 @@ export default class MyApp extends App {
 
     logout(){
         localStorage.clear();
-        this.setState({studentFirstName : ''});
-        this.setState({studentLastName : ''});
+        this.setState({firstName : ''});
+        this.setState({lastName : ''});
         this.setState({statusLogin : ''});
         Router.replace('/');
     }
@@ -155,7 +203,7 @@ export default class MyApp extends App {
         const {Component, pageProps} = this.props
         return <Container>
             <Header/>
-            <Navbar studentFirstName={this.state.studentFirstName} studentLastName={this.state.studentLastName}
+            <Navbar firstName={this.state.firstName} lastName={this.state.lastName}
                     statusLogin={this.state.statusLogin} logout={this.logout}/>
                 <Component {...pageProps} checkLogin={this.checkLogin}/>
         </Container>

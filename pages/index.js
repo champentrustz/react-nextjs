@@ -91,7 +91,14 @@ export default class index extends Component {
             const dataTeacher = data.data;
 
             if (data.status === 1) {
-                alert('login สำเร็จ');
+                localStorage.setItem('isTeacher', 'true');
+                localStorage.setItem('teacherID', dataTeacher.teacherID);
+                localStorage.setItem('teacherFirstName', dataTeacher.teacherName);
+                localStorage.setItem('teacherLastName', dataTeacher.teacherLastname);
+                localStorage.setItem('teacherUsername', this.state.username);
+                localStorage.setItem('teacherPassword', this.state.password);
+                this.props.checkLogin('true');
+                Router.push('/teacher-course');
             }
             else{
                 this.setState({username: ''});
@@ -119,7 +126,13 @@ export default class index extends Component {
             const dataTeacherAssistant = data.data;
 
             if (data.status === 1) {
-                alert('login สำเร็จ');
+                localStorage.setItem('isTeacherAssistant', 'true');
+                localStorage.setItem('teacherAssistantFirstName', dataTeacherAssistant.taName);
+                localStorage.setItem('teacherAssistantLastName', dataTeacherAssistant.taLastname);
+                localStorage.setItem('teacherAssistantUsername', this.state.username);
+                localStorage.setItem('teacherAssistantPassword', this.state.password);
+                this.props.checkLogin('true');
+                Router.push('/ta-course');
             }
             else{
                 this.setState({username: ''});
@@ -147,7 +160,11 @@ export default class index extends Component {
             const dataTeacherAssistant = data.data;
 
             if (data.status === 1) {
-                alert('login สำเร็จ');
+                localStorage.setItem('isAdmin', 'true');
+                localStorage.setItem('adminFirstName', dataTeacherAssistant.taName);
+                localStorage.setItem('adminLastName', dataTeacherAssistant.taLastname);
+                this.props.checkLogin('true');
+                Router.push('/admin');
             }
             else{
                 this.setState({username: ''});

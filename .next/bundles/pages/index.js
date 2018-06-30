@@ -1,23 +1,15 @@
 module.exports =
-
-        __NEXT_REGISTER_PAGE('/', function() {
-          var comp = 
+__NEXT_REGISTER_PAGE('/', function() {
+          var comp =
       webpackJsonp([4],{
 
 /***/ "./components/login/login-form.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var _jsxFileName = "D:\\react-nextjs\\components\\login\\login-form.js";
-
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
-
 
 
 var StatusLogin = function StatusLogin(props) {
@@ -163,27 +155,7 @@ var LoginForm = function LoginForm(props) {
   })));
 };
 
-var _default = LoginForm;
-/* harmony default export */ __webpack_exports__["a"] = (_default);
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(StatusLogin, "StatusLogin", "D:\\react-nextjs\\components\\login\\login-form.js");
-  reactHotLoader.register(LoginForm, "LoginForm", "D:\\react-nextjs\\components\\login\\login-form.js");
-  reactHotLoader.register(_default, "default", "D:\\react-nextjs\\components\\login\\login-form.js");
-  leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
+/* harmony default export */ __webpack_exports__["a"] = (LoginForm);
 
 /***/ }),
 
@@ -191,16 +163,9 @@ var _default = LoginForm;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var _jsxFileName = "D:\\react-nextjs\\components\\login\\timer.js";
-
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
-
 
 
 var Timer = function Timer(props) {
@@ -223,26 +188,7 @@ var Timer = function Timer(props) {
   }));
 };
 
-var _default = Timer;
-/* unused harmony default export */ var _unused_webpack_default_export = (_default);
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(Timer, "Timer", "D:\\react-nextjs\\components\\login\\timer.js");
-  reactHotLoader.register(_default, "default", "D:\\react-nextjs\\components\\login\\timer.js");
-  leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
+/* unused harmony default export */ var _unused_webpack_default_export = (Timer);
 
 /***/ }),
 
@@ -779,7 +725,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return index; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__ = __webpack_require__("./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__);
@@ -789,12 +735,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_next_router__);
 
 var _jsxFileName = "D:\\react-nextjs\\pages\\index.js";
-
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -952,7 +892,14 @@ function (_Component) {
                 dataTeacher = _data.data;
 
                 if (_data.status === 1) {
-                  alert('login สำเร็จ');
+                  localStorage.setItem('isTeacher', 'true');
+                  localStorage.setItem('teacherID', dataTeacher.teacherID);
+                  localStorage.setItem('teacherFirstName', dataTeacher.teacherName);
+                  localStorage.setItem('teacherLastName', dataTeacher.teacherLastname);
+                  localStorage.setItem('teacherUsername', this.state.username);
+                  localStorage.setItem('teacherPassword', this.state.password);
+                  this.props.checkLogin('true');
+                  __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/teacher-course');
                 } else {
                   this.setState({
                     username: ''
@@ -998,7 +945,13 @@ function (_Component) {
                 dataTeacherAssistant = _data2.data;
 
                 if (_data2.status === 1) {
-                  alert('login สำเร็จ');
+                  localStorage.setItem('isTeacherAssistant', 'true');
+                  localStorage.setItem('teacherAssistantFirstName', dataTeacherAssistant.taName);
+                  localStorage.setItem('teacherAssistantLastName', dataTeacherAssistant.taLastname);
+                  localStorage.setItem('teacherAssistantUsername', this.state.username);
+                  localStorage.setItem('teacherAssistantPassword', this.state.password);
+                  this.props.checkLogin('true');
+                  __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/ta-course');
                 } else {
                   this.setState({
                     username: ''
@@ -1044,7 +997,11 @@ function (_Component) {
                 _dataTeacherAssistant = _data3.data;
 
                 if (_data3.status === 1) {
-                  alert('login สำเร็จ');
+                  localStorage.setItem('isAdmin', 'true');
+                  localStorage.setItem('adminFirstName', _dataTeacherAssistant.taName);
+                  localStorage.setItem('adminLastName', _dataTeacherAssistant.taLastname);
+                  this.props.checkLogin('true');
+                  __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/admin');
                 } else {
                   this.setState({
                     username: ''
@@ -1137,19 +1094,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207
+          lineNumber: 224
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 227
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212
+          lineNumber: 229
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_login_login_form__["a" /* default */], {
         message: this.props.message,
@@ -1163,16 +1120,9 @@ function (_Component) {
         login: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 231
         }
       }))));
-    }
-  }, {
-    key: "__reactstandin__regenerateByEval",
-    // @ts-ignore
-    value: function __reactstandin__regenerateByEval(key, code) {
-      // @ts-ignore
-      this[key] = eval(code);
     }
   }], [{
     key: "getInitialProps",
@@ -1219,22 +1169,6 @@ function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(index, "index", "D:\\react-nextjs\\pages\\index.js");
-  leaveModule(module);
-})();
-
-;
     (function (Component, route) {
       if(!Component) return
       if (false) return
