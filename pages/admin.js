@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import 'isomorphic-fetch'
+import Router from "next/router";
 
 export default class admin extends Component {
     constructor(props) {
@@ -10,26 +11,37 @@ export default class admin extends Component {
 
     }
 
+    componentDidMount(){
+        if(this.props.isLogin != 'admin'){
+            Router.replace('/');
+        }
+    }
+
     render () {
 
-        return (
+        if(this.props.isLogin == 'admin') {
 
-            <div className="container" style={{'paddingTop':'80px'}}>
+            return (
+
+                <div className="container" style={{'paddingTop': '80px'}}>
 
 
-                <div className="row">
+                    <div className="row">
 
-                    <div className="col-md-12">
+                        <div className="col-md-12">
+                            <h4>ผู้ดูแลระบบ</h4>
+                        </div>
 
-                        admin
+
                     </div>
-
 
                 </div>
 
-            </div>
 
-
-        );
+            );
+        }
+        else{
+            return false;
+        }
     }
 }

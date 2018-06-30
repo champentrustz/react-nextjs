@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import 'isomorphic-fetch'
+import Router from "next/router";
 
 export default class teacherCourse extends Component {
     constructor(props) {
@@ -7,29 +8,40 @@ export default class teacherCourse extends Component {
         this.state = {
         };
 
+    }
 
+    componentDidMount(){
+        if(this.props.isLogin != 'teacher'){
+            Router.replace('/');
+        }
     }
 
     render () {
 
-        return (
+        if (this.props.isLogin == 'teacher') {
 
-            <div className="container" style={{'paddingTop':'80px'}}>
+            return (
+
+                <div className="container" style={{'paddingTop': '80px'}}>
 
 
-                <div className="row">
+                    <div className="row">
 
-                    <div className="col-md-12">
+                        <div className="col-md-12">
 
-                        teacher-course
+                            teacher-course
+                        </div>
+
+
                     </div>
-
 
                 </div>
 
-            </div>
 
-
-        );
+            );
+        }
+        else {
+            return false;
+        }
     }
 }

@@ -98,11 +98,15 @@ export default class MyApp extends App {
             statusLogin : '',
             firstName: '',
             lastName : '',
+            isLogin : '',
         };
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);
 
     }
+
+
+
 
 
     checkLogin(status){
@@ -112,42 +116,67 @@ export default class MyApp extends App {
         const isTeacherAssistant =   localStorage.getItem("isTeacherAssistant");
         const isAdmin =   localStorage.getItem("isAdmin");
 
-        if(isStudent == 'true'){
-            const firstName =  localStorage.getItem("studentFirstName");
-            const lastName =  localStorage.getItem("studentLastName");
-            this.setState({firstName : firstName});
-            this.setState({lastName : lastName});
-            this.setState({statusLogin : status});
-        }
-        else if(isTeacher == 'true'){
-            const firstName =  localStorage.getItem("teacherFirstName");
-            const lastName =  localStorage.getItem("teacherLastName");
-            this.setState({firstName : firstName});
-            this.setState({lastName : lastName});
-            this.setState({statusLogin : status});
-        }
-        else if(isTeacherAssistant == 'true'){
-            const firstName =  localStorage.getItem("teacherAssistantFirstName");
-            const lastName =  localStorage.getItem("teacherAssistantLastName");
-            this.setState({firstName : firstName});
-            this.setState({lastName : lastName});
-            this.setState({statusLogin : status});
-        }
-        else if(isAdmin == 'true'){
-            const firstName =  localStorage.getItem("adminFirstName");
-            const lastName =  localStorage.getItem("adminLastName");
-            this.setState({firstName : firstName});
-            this.setState({lastName : lastName});
-            this.setState({statusLogin : status});
+        Router.onRouteChangeComplete = url => {
+            if(url == '/student-course'){
+
+                if(isStudent == 'true'){
+                    const firstName =  localStorage.getItem("studentFirstName");
+                    const lastName =  localStorage.getItem("studentLastName");
+                    this.setState({firstName : firstName});
+                    this.setState({lastName : lastName});
+                    this.setState({statusLogin : status});
+                    this.setState({isLogin : 'student'});
+                }
+
+            }
+            else if(url == '/teacher-course'){
+
+                if(isTeacher == 'true'){
+                    const firstName =  localStorage.getItem("teacherFirstName");
+                    const lastName =  localStorage.getItem("teacherLastName");
+                    this.setState({firstName : firstName});
+                    this.setState({lastName : lastName});
+                    this.setState({statusLogin : status});
+                    this.setState({isLogin : 'teacher'});
+                }
+
+            }
+
+            else if(url == '/ta-course'){
+
+                if(isTeacherAssistant == 'true'){
+                    const firstName =  localStorage.getItem("teacherAssistantFirstName");
+                    const lastName =  localStorage.getItem("teacherAssistantLastName");
+                    this.setState({firstName : firstName});
+                    this.setState({lastName : lastName});
+                    this.setState({statusLogin : status});
+                    this.setState({isLogin : 'ta'});
+                }
+
+            }
+
+
+            else if(url == '/admin'){
+
+                if(isAdmin == 'true'){
+                    const firstName =  localStorage.getItem("adminFirstName");
+                    const lastName =  localStorage.getItem("adminLastName");
+                    this.setState({firstName : firstName});
+                    this.setState({lastName : lastName});
+                    this.setState({statusLogin : status});
+                    this.setState({isLogin : 'admin'});
+                }
+
+            }
+
         }
 
-        else{
-            return false;
-        }
+
     }
 
 
     async componentDidMount() {
+
 
         const isStudent =   localStorage.getItem("isStudent");
         const isTeacher =   localStorage.getItem("isTeacher");
@@ -160,6 +189,7 @@ export default class MyApp extends App {
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
+            this.setState({isLogin : 'student'});
         }
         else if(isTeacher == 'true'){
             const firstName =  localStorage.getItem("teacherFirstName");
@@ -167,6 +197,7 @@ export default class MyApp extends App {
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
+            this.setState({isLogin : 'teacher'});
         }
         else if(isTeacherAssistant == 'true'){
             const firstName =  localStorage.getItem("teacherAssistantFirstName");
@@ -174,6 +205,7 @@ export default class MyApp extends App {
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
+            this.setState({isLogin : 'ta'});
         }
         else if(isAdmin == 'true'){
             const firstName =  localStorage.getItem("adminFirstName");
@@ -181,6 +213,8 @@ export default class MyApp extends App {
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
+            this.setState({isLogin : 'admin'});
+
         }
 
         else{
@@ -191,9 +225,15 @@ export default class MyApp extends App {
     logout(){
         localStorage.clear();
         Router.replace('/');
-        this.setState({firstName : ''});
-        this.setState({lastName : ''});
-        this.setState({statusLogin : ''});
+        Router.onRouteChangeComplete = url => {
+            if(url == '/'){
+                this.setState({firstName : ''});
+                this.setState({lastName : ''});
+                this.setState({statusLogin : ''});
+                this.setState({isLogin : ''});
+            }
+        }
+
     }
 
 
@@ -205,7 +245,7 @@ export default class MyApp extends App {
             <Header/>
             <Navbar firstName={this.state.firstName} lastName={this.state.lastName}
                     statusLogin={this.state.statusLogin} logout={this.logout}/>
-                <Component {...pageProps} checkLogin={this.checkLogin}/>
+                <Component {...pageProps} checkLogin={this.checkLogin} isLogin={this.state.isLogin}/>
         </Container>
     }
 }
