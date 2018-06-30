@@ -190,10 +190,10 @@ export default class MyApp extends App {
 
     logout(){
         localStorage.clear();
+        Router.replace('/');
         this.setState({firstName : ''});
         this.setState({lastName : ''});
         this.setState({statusLogin : ''});
-        Router.replace('/');
     }
 
 

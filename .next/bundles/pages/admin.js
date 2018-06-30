@@ -1,7 +1,7 @@
 module.exports =
-__NEXT_REGISTER_PAGE('/teacher-course', function() {
+__NEXT_REGISTER_PAGE('/admin', function() {
           var comp =
-      webpackJsonp([5],{
+      webpackJsonp([6],{
 
 /***/ "./node_modules/isomorphic-fetch/fetch-npm-browserify.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -520,17 +520,17 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./pages/teacher-course.js":
+/***/ "./pages/admin.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return teacherCourse; });
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return admin; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_isomorphic_fetch__ = __webpack_require__("./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_isomorphic_fetch__);
-var _jsxFileName = "D:\\react-nextjs\\pages\\teacher-course.js";
+var _jsxFileName = "D:\\react-nextjs\\pages\\admin.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -549,22 +549,22 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var teacherCourse =
+var admin =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(teacherCourse, _Component);
+  _inherits(admin, _Component);
 
-  function teacherCourse(props) {
+  function admin(props) {
     var _this;
 
-    _classCallCheck(this, teacherCourse);
+    _classCallCheck(this, admin);
 
-    _this = _possibleConstructorReturn(this, (teacherCourse.__proto__ || Object.getPrototypeOf(teacherCourse)).call(this, props));
+    _this = _possibleConstructorReturn(this, (admin.__proto__ || Object.getPrototypeOf(admin)).call(this, props));
     _this.state = {};
     return _this;
   }
 
-  _createClass(teacherCourse, [{
+  _createClass(admin, [{
     key: "render",
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
@@ -588,11 +588,11 @@ function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 22
         }
-      }, "teacher-course")));
+      }, "admin")));
     }
   }]);
 
-  return teacherCourse;
+  return admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 
@@ -612,22 +612,22 @@ function (_Component) {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/teacher-course")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/admin")
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/teacher-course.js");
+module.exports = __webpack_require__("./pages/admin.js");
 
 
 /***/ })
 
-},[4])
+},[5])
           return { page: comp.default }
         })
       ;
-//# sourceMappingURL=teacher-course.js.map
+//# sourceMappingURL=admin.js.map

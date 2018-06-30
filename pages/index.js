@@ -62,8 +62,8 @@ export default class index extends Component {
                 localStorage.setItem('studentUsername', this.state.username);
                 localStorage.setItem('studentPassword', this.state.password);
                 localStorage.setItem('studentGender', dataStudent.studentGender);
-                this.props.checkLogin('true');
                 Router.push('/student-course');
+                this.props.checkLogin('true');
 
             }
             else{
@@ -97,8 +97,8 @@ export default class index extends Component {
                 localStorage.setItem('teacherLastName', dataTeacher.teacherLastname);
                 localStorage.setItem('teacherUsername', this.state.username);
                 localStorage.setItem('teacherPassword', this.state.password);
-                this.props.checkLogin('true');
                 Router.push('/teacher-course');
+                this.props.checkLogin('true');
             }
             else{
                 this.setState({username: ''});
@@ -131,8 +131,8 @@ export default class index extends Component {
                 localStorage.setItem('teacherAssistantLastName', dataTeacherAssistant.taLastname);
                 localStorage.setItem('teacherAssistantUsername', this.state.username);
                 localStorage.setItem('teacherAssistantPassword', this.state.password);
-                this.props.checkLogin('true');
                 Router.push('/ta-course');
+                this.props.checkLogin('true');
             }
             else{
                 this.setState({username: ''});
@@ -163,8 +163,8 @@ export default class index extends Component {
                 localStorage.setItem('isAdmin', 'true');
                 localStorage.setItem('adminFirstName', dataTeacherAssistant.taName);
                 localStorage.setItem('adminLastName', dataTeacherAssistant.taLastname);
-                this.props.checkLogin('true');
                 Router.push('/admin');
+                this.props.checkLogin('true');
             }
             else{
                 this.setState({username: ''});

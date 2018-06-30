@@ -1,4 +1,4 @@
-webpackHotUpdate(4,{
+webpackHotUpdate(5,{
 
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -128,8 +128,8 @@ function (_Component) {
                   localStorage.setItem('studentUsername', this.state.username);
                   localStorage.setItem('studentPassword', this.state.password);
                   localStorage.setItem('studentGender', dataStudent.studentGender);
-                  this.props.checkLogin('true');
                   __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/student-course');
+                  this.props.checkLogin('true');
                 } else {
                   this.setState({
                     username: ''
@@ -181,8 +181,8 @@ function (_Component) {
                   localStorage.setItem('teacherLastName', dataTeacher.teacherLastname);
                   localStorage.setItem('teacherUsername', this.state.username);
                   localStorage.setItem('teacherPassword', this.state.password);
-                  this.props.checkLogin('true');
                   __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/teacher-course');
+                  this.props.checkLogin('true');
                 } else {
                   this.setState({
                     username: ''
@@ -233,8 +233,8 @@ function (_Component) {
                   localStorage.setItem('teacherAssistantLastName', dataTeacherAssistant.taLastname);
                   localStorage.setItem('teacherAssistantUsername', this.state.username);
                   localStorage.setItem('teacherAssistantPassword', this.state.password);
-                  this.props.checkLogin('true');
                   __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/ta-course');
+                  this.props.checkLogin('true');
                 } else {
                   this.setState({
                     username: ''
@@ -283,8 +283,8 @@ function (_Component) {
                   localStorage.setItem('isAdmin', 'true');
                   localStorage.setItem('adminFirstName', _dataTeacherAssistant.taName);
                   localStorage.setItem('adminLastName', _dataTeacherAssistant.taLastname);
-                  this.props.checkLogin('true');
                   __WEBPACK_IMPORTED_MODULE_5_next_router___default.a.push('/admin');
+                  this.props.checkLogin('true');
                 } else {
                   this.setState({
                     username: ''
@@ -475,4 +475,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=4.5d9186896c607e3d8f27.hot-update.js.map
+//# sourceMappingURL=5.50ce68bcabc3ccc8ec81.hot-update.js.map
