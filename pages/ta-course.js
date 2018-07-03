@@ -23,7 +23,7 @@ export default class taCourse extends Component {
 
             return (
 
-                <div className="container" style={{'paddingTop': '80px'}}>
+                <div className="container" style={{'paddingTop': '70px'}}>
 
 
                     <div className="row">

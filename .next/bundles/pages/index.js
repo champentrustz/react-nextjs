@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/', function() {
           var comp =
-      webpackJsonp([4],{
+      webpackJsonp([5],{
 
 /***/ "./components/login/login-form.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1123,7 +1123,7 @@ function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "container",
         style: {
-          'paddingTop': '80px'
+          'paddingTop': '70px'
         },
         __source: {
           fileName: _jsxFileName,
@@ -1218,7 +1218,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.js");
@@ -1226,7 +1226,7 @@ module.exports = __webpack_require__("./pages/index.js");
 
 /***/ })
 
-},[3])
+},[4])
           return { page: comp.default }
         })
       ;

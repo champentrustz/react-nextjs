@@ -16,6 +16,7 @@ class Header extends React.Component {
                           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
                           crossOrigin="anonymous"/>
                     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet"/>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                                 crossOrigin="anonymous"/>
@@ -66,17 +67,17 @@ class Navbar extends React.Component {
     render () {
         return (
             <div>
-                <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <Link href="/">
                     <a className="navbar-brand">GE Smart Classroom</a>
                     </Link>
 
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
 
                         </ul>
@@ -99,6 +100,8 @@ export default class MyApp extends App {
             firstName: '',
             lastName : '',
             isLogin : '',
+            username: '',
+            password:'',
         };
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);
@@ -122,10 +125,14 @@ export default class MyApp extends App {
                 if(isStudent == 'true'){
                     const firstName =  localStorage.getItem("studentFirstName");
                     const lastName =  localStorage.getItem("studentLastName");
+                    const username =  localStorage.getItem("studentUsername");
+                    const password =  localStorage.getItem("studentPassword");
                     this.setState({firstName : firstName});
                     this.setState({lastName : lastName});
                     this.setState({statusLogin : status});
                     this.setState({isLogin : 'student'});
+                    this.setState({username : username});
+                    this.setState({password : password});
                 }
 
             }
@@ -134,10 +141,14 @@ export default class MyApp extends App {
                 if(isTeacher == 'true'){
                     const firstName =  localStorage.getItem("teacherFirstName");
                     const lastName =  localStorage.getItem("teacherLastName");
+                    const username =  localStorage.getItem("teacherUsername");
+                    const password =  localStorage.getItem("teacherPassword");
                     this.setState({firstName : firstName});
                     this.setState({lastName : lastName});
                     this.setState({statusLogin : status});
                     this.setState({isLogin : 'teacher'});
+                    this.setState({username : username});
+                    this.setState({password : password});
                 }
 
             }
@@ -147,10 +158,14 @@ export default class MyApp extends App {
                 if(isTeacherAssistant == 'true'){
                     const firstName =  localStorage.getItem("teacherAssistantFirstName");
                     const lastName =  localStorage.getItem("teacherAssistantLastName");
+                    const username =  localStorage.getItem("teacherAssistantUsername");
+                    const password =  localStorage.getItem("teacherAssistantPassword");
                     this.setState({firstName : firstName});
                     this.setState({lastName : lastName});
                     this.setState({statusLogin : status});
                     this.setState({isLogin : 'ta'});
+                    this.setState({username : username});
+                    this.setState({password : password});
                 }
 
             }
@@ -186,26 +201,38 @@ export default class MyApp extends App {
         if(isStudent == 'true'){
             const firstName =  localStorage.getItem("studentFirstName");
             const lastName =  localStorage.getItem("studentLastName");
+            const username =  localStorage.getItem("studentUsername");
+            const password =  localStorage.getItem("studentPassword");
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
             this.setState({isLogin : 'student'});
+            this.setState({username : username});
+            this.setState({password : password});
         }
         else if(isTeacher == 'true'){
             const firstName =  localStorage.getItem("teacherFirstName");
             const lastName =  localStorage.getItem("teacherLastName");
+            const username =  localStorage.getItem("teacherUsername");
+            const password =  localStorage.getItem("teacherPassword");
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
             this.setState({isLogin : 'teacher'});
+            this.setState({username : username});
+            this.setState({password : password});
         }
         else if(isTeacherAssistant == 'true'){
             const firstName =  localStorage.getItem("teacherAssistantFirstName");
             const lastName =  localStorage.getItem("teacherAssistantLastName");
+            const username =  localStorage.getItem("teacherAssistantUsername");
+            const password =  localStorage.getItem("teacherAssistantPassword");
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
             this.setState({isLogin : 'ta'});
+            this.setState({username : username});
+            this.setState({password : password});
         }
         else if(isAdmin == 'true'){
             const firstName =  localStorage.getItem("adminFirstName");
@@ -231,6 +258,8 @@ export default class MyApp extends App {
                 this.setState({lastName : ''});
                 this.setState({statusLogin : ''});
                 this.setState({isLogin : ''});
+                this.setState({username : ''});
+                this.setState({password : ''});
             }
         }
 
@@ -245,7 +274,8 @@ export default class MyApp extends App {
             <Header/>
             <Navbar firstName={this.state.firstName} lastName={this.state.lastName}
                     statusLogin={this.state.statusLogin} logout={this.logout}/>
-                <Component {...pageProps} checkLogin={this.checkLogin} isLogin={this.state.isLogin}/>
+                <Component  {...pageProps} checkLogin={this.checkLogin} isLogin={this.state.isLogin}
+                username={this.state.username} password={this.state.password}/>
         </Container>
     }
 }

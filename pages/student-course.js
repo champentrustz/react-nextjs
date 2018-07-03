@@ -25,7 +25,7 @@ export default class studentCourse extends Component {
 
             return (
 
-                <div className="container" style={{'paddingTop': '80px'}}>
+                <div className="container" style={{'paddingTop': '70px'}}>
 
 
                     <div className="row">
