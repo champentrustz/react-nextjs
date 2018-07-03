@@ -3,6 +3,8 @@ import 'isomorphic-fetch'
 import Router from "next/router";
 import CourseCard from '../components/teacher-course/course-card'
 
+
+
 export default class teacherCourse extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,6 @@ export default class teacherCourse extends Component {
         };
 
     }
-
     async componentDidMount(){
         if(this.props.isLogin != 'teacher'){
             Router.replace('/');
@@ -40,6 +41,7 @@ export default class teacherCourse extends Component {
             this.setState({current_date : dataDateTime.date});
             this.setState({current_time : dataDateTime.time});
 
+
         }
     }
 
@@ -50,6 +52,7 @@ export default class teacherCourse extends Component {
 
 
 
+
         if (this.props.isLogin == 'teacher') {
 
             return (
@@ -57,14 +60,10 @@ export default class teacherCourse extends Component {
                 <div className="container" style={{'paddingTop': '70px'}}>
 
 
-                    <div className="row">
 
 
+                        <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}/>
 
-                            <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}/>
-
-
-                    </div>
 
                 </div>
 
