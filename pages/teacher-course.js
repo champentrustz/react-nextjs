@@ -7,7 +7,6 @@ export default class teacherCourse extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data_course_teacher : '',
         };
 
     }
@@ -33,11 +32,22 @@ export default class teacherCourse extends Component {
             const  data_resp  = await resp.json();
             const  data_teacher  =  data_resp.data;
             this.setState({data_course_teacher : data_teacher});
+
+            const respDateTime = await fetch('http://localhost/ge_api/getCurrentDateTime.php');
+
+            const dataDateTime = await respDateTime.json();
+
+            this.setState({current_date : dataDateTime.date});
+            this.setState({current_time : dataDateTime.time});
+
         }
     }
 
 
+
+
     render () {
+
 
 
         if (this.props.isLogin == 'teacher') {
@@ -51,7 +61,7 @@ export default class teacherCourse extends Component {
 
 
 
-                            <CourseCard test={this.state.data_course_teacher}/>
+                            <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}/>
 
 
                     </div>
