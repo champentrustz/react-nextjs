@@ -70,7 +70,7 @@ export default class studentCourse extends Component {
     render () {
 
 
-        if(this.props.isLogin == 'student-course'){
+        if(this.props.isLogin == 'student'){
 
             return (
 

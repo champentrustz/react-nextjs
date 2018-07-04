@@ -129,15 +129,19 @@ export default class teacher extends Component {
                 <div className="container" style={{'paddingTop': '60px'}}>
 
                     <h4>{this.state.courseName} กลุ่มที่ : {this.state.groupName}</h4>
-                    <br/>
-                    <div className="row">
-                        <CardCheckIn classStatus={this.state.classStatus} checkInCode={this.state.checkInCode} changeCheckInCode={this.changeCheckInCode}/>
-                        <TabsMenu/>
 
-                    </div>
                     <div className="row">
-                    <CardCheckOut classStatus={this.state.classStatus} checkOutCode={this.state.checkOutCode} changeCheckOutCode={this.changeCheckOutCode}/>
+                        <div className="col-md-3">
+                        <CardCheckIn classStatus={this.state.classStatus} checkInCode={this.state.checkInCode} changeCheckInCode={this.changeCheckInCode}/>
+                         <br/>
+                            <CardCheckOut classStatus={this.state.classStatus} checkOutCode={this.state.checkOutCode} changeCheckOutCode={this.changeCheckOutCode}/>
+                            <br/>
+                        </div>
+                        <div className="col-md-9">
+                            <TabsMenu/>
+                        </div>
                     </div>
+
 
 
 

@@ -17,7 +17,6 @@ const CourseCard = (props) => {
     let card = [];
     let index = 0;
 
-    console.log(studentData)
 
     studentData && currentTime && currentDate && studentData.aSubject.map((studentSubject) => {
 
@@ -64,7 +63,7 @@ const CourseCard = (props) => {
 
 
         })
-        if (haveCourse === 1) {
+        if (haveCourse === 0) {
             card.push(
                 <div className="col-md-4" key={index}>
 
@@ -78,7 +77,7 @@ const CourseCard = (props) => {
                         <div className="card-footer">
 
                                     <p/>
-                                    <button className="btn btn-success btn-md btn-block" onClick={() => props.intoClass(studentSubject.subject_id,studentSubject.group_id,today,studentSubject.subject_name,scheduleStartTime,scheduleEndTime,year,semester,studentSubject.group_name)}>เข้าห้องเรียน</button>
+                                    <button className="btn btn-success btn-md btn-block" onClick={() => props.intoClass(studentSubject.subject_id,studentSubject.group_id,currentDate,studentSubject.subject_name,scheduleStartTime,scheduleEndTime,year,semester,studentSubject.group_name)}>เข้าห้องเรียน</button>
                                     <p/>
                         </div>
                     </div>
@@ -88,7 +87,7 @@ const CourseCard = (props) => {
                 </div>
             )
         }
-        if (haveCourse === 0) {
+        if (haveCourse === 1) {
 
             card.push(
                 <div className="col-md-4" key={index}>

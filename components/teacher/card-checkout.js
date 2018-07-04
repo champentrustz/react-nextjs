@@ -11,8 +11,7 @@ const CardCheckOut = (props) => {
     if(classStatus && classStatus == 'manage' || classStatus == 'class') {
 
             return (
-                <div className="col-md-3">
-                    <br/>
+
                     <div className="card border-danger">
                         <div className="card-header text-danger">รหัสออกห้องเรียน</div>
                         <div className="card-body">
@@ -22,7 +21,7 @@ const CardCheckOut = (props) => {
                             <button className="btn btn-success btn-block" onClick={props.changeCheckOutCode}>สุ่มรหัส</button>
                         </div>
                     </div>
-                </div>
+
             )
         }
     else{

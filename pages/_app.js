@@ -114,7 +114,7 @@ export default class MyApp extends App {
         const isAdmin =   localStorage.getItem("isAdmin");
 
         Router.onRouteChangeComplete = url => {
-            if(url == '/student-course-course'){
+            if(url == '/student-course'){
 
                 if(isStudent == 'true'){
                     const firstName =  localStorage.getItem("studentFirstName");
@@ -124,7 +124,7 @@ export default class MyApp extends App {
                     this.setState({firstName : firstName});
                     this.setState({lastName : lastName});
                     this.setState({statusLogin : status});
-                    this.setState({isLogin : 'student-course'});
+                    this.setState({isLogin : 'student'});
                     this.setState({username : username});
                     this.setState({password : password});
                 }
@@ -200,7 +200,7 @@ export default class MyApp extends App {
             this.setState({firstName : firstName});
             this.setState({lastName : lastName});
             this.setState({statusLogin : 'true'});
-            this.setState({isLogin : 'student-course'});
+            this.setState({isLogin : 'student'});
             this.setState({username : username});
             this.setState({password : password});
         }

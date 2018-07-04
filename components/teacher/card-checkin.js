@@ -11,7 +11,7 @@ const CardCheckIn = (props) => {
     if(classStatus && classStatus == 'manage' || classStatus == 'class') {
 
            return (
-               <div className="col-md-3">
+
                <div className="card border-primary">
                    <div className="card-header text-primary">รหัสเข้าห้องเรียน</div>
                    <div className="card-body">
@@ -22,7 +22,7 @@ const CardCheckIn = (props) => {
                    </div>
 
                </div>
-               </div>
+
            )
 
 
