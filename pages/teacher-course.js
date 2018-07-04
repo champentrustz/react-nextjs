@@ -22,8 +22,8 @@ export default class teacherCourse extends Component {
 
 
         localStorage.setItem('courseID', courseID);
-        localStorage.setItem('courseSection', groupID);
-        localStorage.setItem('sectionName', groupName);
+        localStorage.setItem('groupID', groupID);
+        localStorage.setItem('groupName', groupName);
         localStorage.setItem('courseName', courseName);
         localStorage.setItem('statusClass', 'manage');
 

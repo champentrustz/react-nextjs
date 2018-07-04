@@ -150,7 +150,6 @@ export default class admin extends Component {
 
 
 
-
         if(this.props.isLogin == 'true') {
 
             return (
