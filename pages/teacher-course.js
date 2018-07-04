@@ -31,8 +31,8 @@ export default class teacherCourse extends Component {
     }
 
     async componentDidMount(){
-        const isTeacher =   localStorage.getItem("isTeacher");
-        if(isTeacher != 'teacher'){
+        const isTeacher =  await localStorage.getItem("isTeacher");
+        if(isTeacher != 'true'){
             Router.replace('/');
         }
         else{
@@ -71,7 +71,7 @@ export default class teacherCourse extends Component {
 
 
 
-        if (this.props.isLogin == 'teacher'){
+        if (this.props.isLogin == 'teacher') {
 
             return (
 

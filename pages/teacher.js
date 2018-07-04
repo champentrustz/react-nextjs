@@ -13,7 +13,8 @@ export default class teacher extends Component {
 
 
     async componentDidMount(){
-        const isTeacher =   localStorage.getItem("isTeacher");
+        const isTeacher =  await localStorage.getItem("isTeacher");
+        const classStatus =  await localStorage.getItem("isTeacher");
         if(isTeacher != 'true'){
             Router.replace('/');
         }

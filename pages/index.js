@@ -235,7 +235,7 @@ export default class index extends Component {
 
         return (
 
-                <div className="container" style={{'paddingTop':'70px'}}>
+                <div className="container" style={{'paddingTop':'20px'}}>
 
 
                     <div className="row">

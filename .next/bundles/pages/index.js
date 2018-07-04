@@ -1123,7 +1123,7 @@ function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "container",
         style: {
-          'paddingTop': '70px'
+          'paddingTop': '20px'
         },
         __source: {
           fileName: _jsxFileName,

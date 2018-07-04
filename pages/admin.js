@@ -138,8 +138,8 @@ export default class admin extends Component {
     }
 
 
-    componentDidMount(){
-        const isAdmin =   localStorage.getItem("isAdmin");
+    async componentDidMount(){
+        const isAdmin =  await localStorage.getItem("isAdmin");
         if(isAdmin != 'admin'){
             Router.replace('/');
         }
@@ -151,7 +151,7 @@ export default class admin extends Component {
 
 
 
-        if(this.props.isLogin == 'admin') {
+        if(this.props.isLogin == 'true') {
 
             return (
 

@@ -11,9 +11,9 @@ export default class taCourse extends Component {
 
     }
 
-    componentDidMount(){
-        const isTeacherAssistant =   localStorage.getItem("isTeacherAssistant");
-        if(isTeacherAssistant != 'ta'){
+    async componentDidMount(){
+        const isTeacherAssistant =  await localStorage.getItem("isTeacherAssistant");
+        if(isTeacherAssistant != 'true'){
             Router.replace('/');
         }
     }
