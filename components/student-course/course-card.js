@@ -78,7 +78,7 @@ const CourseCard = (props) => {
                         <div className="card-footer">
 
                                     <p/>
-                                    <button className="btn btn-success btn-md btn-block" onClick={() => props.intoClass(studentSubject.subject_id,studentSubject.group_id,today,studentSubject.subject_name,scheduleStartTime,scheduleEndTime,year,semester)}>เข้าห้องเรียน</button>
+                                    <button className="btn btn-success btn-md btn-block" onClick={() => props.intoClass(studentSubject.subject_id,studentSubject.group_id,today,studentSubject.subject_name,scheduleStartTime,scheduleEndTime,year,semester,studentSubject.group_name)}>เข้าห้องเรียน</button>
                                     <p/>
                         </div>
                     </div>
