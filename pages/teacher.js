@@ -12,6 +12,8 @@ export default class teacher extends Component {
         super(props);
         this.state = {
         };
+        this.changeCheckInCode = this.changeCheckInCode.bind(this);
+        this.changeCheckOutCode = this.changeCheckOutCode.bind(this);
     }
 
 
@@ -20,10 +22,14 @@ export default class teacher extends Component {
         const classStatus =  await localStorage.getItem("statusClass");
         const courseID =  await localStorage.getItem("courseID");
         const groupID =  await localStorage.getItem("groupID");
+        const courseName =  await localStorage.getItem("courseName");
+        const groupName =  await localStorage.getItem("groupName");
         if(isTeacher != 'true'){
             Router.replace('/');
         }
         else{
+            this.setState({courseName : courseName})
+            this.setState({groupName : groupName})
             this.setState({classStatus : classStatus})
             const resp = await fetch('http://localhost/ge_api/getClassroomCode.php', {
                 method: 'post',
@@ -40,17 +46,77 @@ export default class teacher extends Component {
             this.setState({checkOutCode : classRoomCode.checkout_code})
             if(this.state.checkInCode == null){
                 let rand = Math.floor(Math.random() * 900000) + 100000;
+                fetch('http://localhost/ge_api/createClassroomCode.php', {
+                    method: 'post',
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify({
+                        course_id : courseID,
+                        group_id : groupID,
+                        type : 'checkin-code',
+                        code : rand
+                    }),
+                });
                 this.setState({checkInCode : rand})
             }
             if(this.state.checkOutCode == null){
                 let rand = Math.floor(Math.random() * 900000) + 100000;
+                fetch('http://localhost/ge_api/createClassroomCode.php', {
+                    method: 'post',
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify({
+                        course_id : courseID,
+                        group_id : groupID,
+                        type : 'checkout-code',
+                        code : rand
+                    }),
+                });
                 this.setState({checkOutCode : rand})
             }
         }
 
     }
 
+    async changeCheckInCode(){
+        const courseID =  await localStorage.getItem("courseID");
+        const groupID =  await localStorage.getItem("groupID");
+        let rand = Math.floor(Math.random() * 900000) + 100000;
+        fetch('http://localhost/ge_api/createClassroomCode.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_id : courseID,
+                group_id : groupID,
+                type : 'checkin-code',
+                code : rand
+            }),
+        });
+        this.setState({checkInCode : rand})
+    }
 
+    async changeCheckOutCode(){
+        const courseID =  await localStorage.getItem("courseID");
+        const groupID =  await localStorage.getItem("groupID");
+        let rand = Math.floor(Math.random() * 900000) + 100000;
+        fetch('http://localhost/ge_api/createClassroomCode.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_id : courseID,
+                group_id : groupID,
+                type : 'checkout-code',
+                code : rand
+            }),
+        });
+        this.setState({checkOutCode : rand})
+    }
 
 
     render () {
@@ -60,15 +126,17 @@ export default class teacher extends Component {
 
             return (
 
-                <div className="container" style={{'paddingTop': '70px'}}>
+                <div className="container" style={{'paddingTop': '60px'}}>
 
+                    <h4>{this.state.courseName} กลุ่มที่ : {this.state.groupName}</h4>
+                    <br/>
                     <div className="row">
-                        <CardCheckIn classStatus={this.state.classStatus} checkInCode={this.state.checkInCode}/>
+                        <CardCheckIn classStatus={this.state.classStatus} checkInCode={this.state.checkInCode} changeCheckInCode={this.changeCheckInCode}/>
                         <TabsMenu/>
 
                     </div>
                     <div className="row">
-                    <CardCheckOut classStatus={this.state.classStatus} checkOutCode={this.state.checkOutCode}/>
+                    <CardCheckOut classStatus={this.state.classStatus} checkOutCode={this.state.checkOutCode} changeCheckOutCode={this.changeCheckOutCode}/>
                     </div>
 
 

@@ -18,7 +18,7 @@ const CardCheckIn = (props) => {
                        <h2 className="text-center text-primary">{checkInCode}</h2>
                    </div>
                    <div className="card-footer">
-                       <button className="btn btn-success btn-block">สุ่มรหัส</button>
+                       <button className="btn btn-success btn-block" onClick={props.changeCheckInCode}>สุ่มรหัส</button>
                    </div>
 
                </div>

@@ -154,7 +154,7 @@ export default class admin extends Component {
 
             return (
 
-                <div className="container" style={{'paddingTop': '70px'}}>
+                <div className="container" style={{'paddingTop': '60px'}}>
 
                     <h4>ผู้ดูแลระบบ</h4>
                     <p/>

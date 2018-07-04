@@ -75,7 +75,7 @@ export default class teacherCourse extends Component {
 
             return (
 
-                <div className="container" style={{'paddingTop': '70px'}}>
+                <div className="container" style={{'paddingTop': '60px'}}>
 
 
                         <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}
