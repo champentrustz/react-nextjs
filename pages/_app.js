@@ -269,7 +269,7 @@ export default class MyApp extends App {
             <Navbar firstName={this.state.firstName} lastName={this.state.lastName}
                     statusLogin={this.state.statusLogin} logout={this.logout}/>
                 <Component  {...pageProps} checkLogin={this.checkLogin} isLogin={this.state.isLogin}
-                username={this.state.username} password={this.state.password}/>
+                username={this.state.username} password={this.state.password} logout={this.logout}/>
         </Container>
     }
 }

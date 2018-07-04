@@ -199,7 +199,7 @@ export default class index extends Component {
 
 
         if(isStudent == 'true'){
-            Router.push('/student-course-course')
+            Router.push('/student-course')
         }
         else if(isTeacher == 'true'){
             Router.push('/teacher-course')

@@ -13,14 +13,22 @@ export default class student extends Component {
         super(props);
         this.state = {
             checkInCode : '',
+            checkOutCode : '',
         };
         this.checkInClass = this.checkInClass.bind(this);
+        this.checkOutClass = this.checkOutClass.bind(this);
         this.checkInCodeChange = this.checkInCodeChange.bind(this);
+        this.checkOutCodeChange = this.checkOutCodeChange.bind(this);
         this.checkInClass = this.checkInClass.bind(this);
+        this.checkOutClass = this.checkOutClass.bind(this);
     }
 
     checkInCodeChange(event){
         this.setState({checkInCode: event.target.value});
+    }
+
+    checkOutCodeChange(event){
+        this.setState({checkOutCode: event.target.value});
     }
 
     async checkInClass(code){
@@ -70,6 +78,42 @@ export default class student extends Component {
         }
         else{
             alert("รหัสเข้าห้องเรียนไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง");
+            this.setState({checkInCode : ''})
+        }
+
+    }
+
+    async checkOutClass(code){
+
+        const resp = await fetch('http://localhost/ge_api/getClassroomCode.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_id : this.state.courseID,
+                group_id : this.state.groupID
+            }),
+        });
+        const dataCourse = await resp.json();
+        const checkOutCode = dataCourse.checkout_code;
+        if(code == checkOutCode){
+
+           fetch('http://localhost/ge_api/checkOutClass.php', {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    course_check_student_id : this.state.checkInID,
+                }),
+            });
+
+            this.props.logout();
+        }
+        else{
+            alert("รหัสออกห้องเรียนไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง");
+            this.setState({checkOutCode : ''})
         }
 
     }
@@ -77,20 +121,20 @@ export default class student extends Component {
 
     async componentDidMount(){
         const isStudent =  await localStorage.getItem("isStudent");
+        const courseID =  await localStorage.getItem("courseID");
+        console.log(courseID)
 
-        if(isStudent != 'true'){
-            Router.replace('/');
+        if(isStudent != 'true' || courseID == undefined){
+            Router.replace('/student-course');
         }
         else{
             const courseName =  await localStorage.getItem("courseName");
             const groupName =  await localStorage.getItem("groupName");
 
-            const courseID =  await localStorage.getItem("courseID");
             const groupID =  await localStorage.getItem("groupID");
             const studentID =  await localStorage.getItem("studentUsername");
             const courseStartTime =  await localStorage.getItem("courseStartTime");
             const courseEndTime =  await localStorage.getItem("courseEndTime");
-            const courseDate =  await localStorage.getItem("courseDate");
 
             this.setState({courseName : courseName})
             this.setState({groupName : groupName})
@@ -107,14 +151,21 @@ export default class student extends Component {
                     group_id : groupID,
                     course_start : courseStartTime,
                     course_end : courseEndTime,
-                    course_date : courseDate
                 }),
             });
             const data = await resp.json();
             const checkStatus = data.duplicate;
+            console.log(data)
             this.setState({checkStatus : checkStatus})
             if(this.state.checkStatus == 'true'){
                 this.setState({checkInStatus : data.status})
+                this.setState({checkInID : data.id})
+            }
+
+            console.log(data.checkout_date);
+
+            if(data.checkout_date != null){
+                this.setState({checkOutStatus : 'true'})
             }
 
         }
@@ -140,7 +191,8 @@ export default class student extends Component {
                     <CardCheckIn checkStatus={this.state.checkStatus} checkInCode={this.state.checkInCode} checkInCodeChange={this.checkInCodeChange}
                     checkInClass={this.checkInClass} checkInStatus={this.state.checkInStatus}/>
                             <br/>
-                     <CardCheckOut checkStatus={this.state.checkStatus}/>
+                     <CardCheckOut checkStatus={this.state.checkStatus} checkOutCode={this.state.checkOutCode} checkOutCodeChange={this.checkOutCodeChange}
+                                   checkOutClass={this.checkOutClass} checkOutStatus={this.state.checkOutStatus}/>
                             <br/>
                     </div>
                         <div className="col-md-9">

@@ -13,10 +13,6 @@ const TabsMenu = (props) => {
                                aria-controls="home" aria-selected="true">เอกสารประกอบการสอน</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" id="profile-tab" data-toggle="tab" href="#report" role="tab"
-                               aria-controls="profile" aria-selected="false">รายงานการเข้าห้องเรียน</a>
-                        </li>
-                        <li className="nav-item">
                             <a className="nav-link" id="contact-tab" data-toggle="tab" href="#question" role="tab"
                                aria-controls="contact" aria-selected="false">คำถาม</a>
                         </li>
@@ -35,13 +31,6 @@ const TabsMenu = (props) => {
                             <div className="col-md-12">
                                 <p/>
                                 เอกสารประกอบการสอน
-                                <p/>
-                            </div>
-                        </div>
-                        <div className="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
-                            <div className="col-md-12">
-                                <p/>
-                                รายงานการเข้าห้องเรียน
                                 <p/>
                             </div>
                         </div>
