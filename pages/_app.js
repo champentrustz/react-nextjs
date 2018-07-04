@@ -96,12 +96,6 @@ export default class MyApp extends App {
     constructor(props) {
         super(props);
         this.state = {
-            statusLogin : '',
-            firstName: '',
-            lastName : '',
-            isLogin : '',
-            username: '',
-            password:'',
         };
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);

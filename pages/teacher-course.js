@@ -10,10 +10,29 @@ export default class teacherCourse extends Component {
         super(props);
         this.state = {
         };
-
+        this.alertNoClass = this.alertNoClass.bind(this);
+        this.manageClass = this.manageClass.bind(this);
     }
+
+    alertNoClass() {
+        alert('ในขณะนี้ยังไม่มีคาบเรียน');
+    }
+
+    manageClass(courseID,groupID,groupName,courseName){
+
+
+        localStorage.setItem('courseID', courseID);
+        localStorage.setItem('courseSection', groupID);
+        localStorage.setItem('sectionName', groupName);
+        localStorage.setItem('courseName', courseName);
+        localStorage.setItem('statusClass', 'manage');
+
+        window.open('/teacher','class-manage','width=1200,height=700');
+    }
+
     async componentDidMount(){
-        if(this.props.isLogin != 'teacher'){
+        const isTeacher =   localStorage.getItem("isTeacher");
+        if(isTeacher != 'teacher'){
             Router.replace('/');
         }
         else{
@@ -52,7 +71,6 @@ export default class teacherCourse extends Component {
 
 
 
-
         if (this.props.isLogin == 'teacher') {
 
             return (
@@ -60,9 +78,8 @@ export default class teacherCourse extends Component {
                 <div className="container" style={{'paddingTop': '70px'}}>
 
 
-
-
-                        <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}/>
+                        <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}
+                        alertNoClass={this.alertNoClass} manageClass={this.manageClass}/>
 
 
                 </div>

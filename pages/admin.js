@@ -139,7 +139,8 @@ export default class admin extends Component {
 
 
     componentDidMount(){
-        if(this.props.isLogin != 'admin'){
+        const isAdmin =   localStorage.getItem("isAdmin");
+        if(isAdmin != 'admin'){
             Router.replace('/');
         }
 

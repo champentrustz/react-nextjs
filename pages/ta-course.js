@@ -12,7 +12,8 @@ export default class taCourse extends Component {
     }
 
     componentDidMount(){
-        if(this.props.isLogin != 'ta'){
+        const isTeacherAssistant =   localStorage.getItem("isTeacherAssistant");
+        if(isTeacherAssistant != 'ta'){
             Router.replace('/');
         }
     }

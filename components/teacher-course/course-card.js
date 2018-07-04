@@ -1,5 +1,8 @@
 import React from 'react'
 
+
+
+
 const CourseCard = (props) => {
 
     let haveCourse = null;
@@ -14,9 +17,9 @@ const CourseCard = (props) => {
     let card = [];
     let index = 0;
 
-    if(teacherData !== undefined && currentTime !== undefined && currentDate !== undefined) {
 
-        teacherData.aSubject.map((teacherSubject, indexSubject) => {
+
+    teacherData && currentTime && currentDate && teacherData.aSubject.map((teacherSubject, indexSubject) => {
 
 
 
@@ -46,6 +49,7 @@ const CourseCard = (props) => {
 
 
 
+
                     if (teacherSchedule.group_schedule_date === currentDate) {
 
 
@@ -72,15 +76,35 @@ const CourseCard = (props) => {
                 if (haveCourse === 1) {
                     card.push(
                         <div className="col-md-4" key={index}>
-                        <div className="card" style={{'height':'90%'}}>
+
+                        <div className="card">
                                 <div className="card-body">
-                                    <h4>{teacherSubject.subjectName}</h4>
+                                    <p className="text-primary">{teacherSubject.subjectName}</p>
                                     <p>รหัสวิชา : {teacherSubject.subjectID}</p>
                                     <p>กลุ่มเรียน : {teacherGroup.groupName}</p>
                                     <p>เวลา: {scheduleStartTime} - {scheduleEndTime} น.</p>
                                 </div>
+                            <div className="card-footer">
+                            <div className="row">
+                            <div className="col-md-6">
+                                <p/>
+                                <button className="btn btn-success btn-md btn-block">เข้าห้องเรียน</button>
+                                <p/>
+                            </div>
+                            <div className="col-md-6">
+
+                                <p/>
+                                    <button className="btn btn-warning btn-md btn-block text-light" onClick={() => props.manageClass(teacherSubject.subjectID,teacherGroup.groupID,teacherGroup.groupName,teacherSubject.subjectName)}>จัดการห้องเรียน</button>
+                                <p/>
+
+                            </div>
+
+                            </div>
+                            </div>
                         </div>
                             <br/>
+
+
                         </div>
                     )
                 }
@@ -88,15 +112,32 @@ const CourseCard = (props) => {
 
                     card.push(
                         <div className="col-md-4" key={index}>
-                        <div className="card" style={{'height':'90%'}}>
+
+                        <div className="card" >
                             <div className="card-body">
-                                <h4>{teacherSubject.subjectName}</h4>
+                                <p className="text-primary">{teacherSubject.subjectName}</p>
                                 <p>รหัสวิชา : {teacherSubject.subjectID}</p>
                                 <p>กลุ่มเรียน : {teacherGroup.groupName}</p>
                                 <p>เวลา: <span className="text-danger">ในขณะนี้ยังไม่มีคาบเรียน</span></p>
                             </div>
+                            <div className="card-footer">
+                            <div className="row">
+                            <div className="col-md-6">
+                                <p/>
+                                <button className="btn btn-danger btn-md btn-block" onClick={props.alertNoClass}>เข้าห้องเรียน</button>
+                                <p/>
+                            </div>
+                            <div className="col-md-6">
+                                <p/>
+                                <button className="btn btn-warning btn-md btn-block text-light" onClick={() => props.manageClass(teacherSubject.subjectID,teacherGroup.groupID,teacherGroup.groupName,teacherSubject.subjectName)}>จัดการห้องเรียน</button>
+                                <p/>
+                            </div>
+
+                            </div>
+                            </div>
                         </div>
                             <br/>
+
                         </div>
                     )
 
@@ -109,14 +150,19 @@ const CourseCard = (props) => {
 
 
         })
-    }
+
 
 
 
     return (
        <div className="row">
-                {card}
-        </div>
+
+
+
+               {card}
+
+
+           </div>
     )
 }
 
