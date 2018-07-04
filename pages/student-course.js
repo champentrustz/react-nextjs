@@ -18,10 +18,11 @@ export default class studentCourse extends Component {
         alert('ในขณะนี้ยังไม่มีคาบเรียน');
     }
 
-    intoClass(courseID,courseSection,courseDate,courseName,courseStartTime,courseEndTime,year,semester){
+    intoClass(courseID,groupID,courseDate,courseName,courseStartTime,courseEndTime,year,semester,groupName){
 
         localStorage.setItem('courseID', courseID);
-        localStorage.setItem('courseSection', courseSection);
+        localStorage.setItem('groupID', groupID);
+        localStorage.setItem('groupName', groupName);
         localStorage.setItem('courseDate', courseDate);
         localStorage.setItem('courseName', courseName);
         localStorage.setItem('courseStartTime', courseStartTime);
