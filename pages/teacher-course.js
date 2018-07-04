@@ -71,7 +71,7 @@ export default class teacherCourse extends Component {
 
 
 
-        if (this.props.isLogin == 'teacher') {
+        if (this.props.isLogin == 'teacher'){
 
             return (
 
