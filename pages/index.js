@@ -12,7 +12,7 @@ export default class index extends Component {
             status_login : '',
             username : '',
             password : '',
-            type : 'student',
+            type : 'student-course',
 
         };
         this.testPrint = this.testPrint.bind(this);
@@ -37,7 +37,7 @@ export default class index extends Component {
 
 
     async login(){
-        if(this.state.type == 'student'){
+        if(this.state.type == 'student-course'){
 
             const resp = await  fetch('http://ge-tss.ssru.ac.th/index.php/Checkinapi/studentlogin', {
                 method: 'post',
@@ -199,7 +199,7 @@ export default class index extends Component {
 
 
         if(isStudent == 'true'){
-            Router.push('/student-course')
+            Router.push('/student-course-course')
         }
         else if(isTeacher == 'true'){
             Router.push('/teacher-course')
