@@ -19,7 +19,7 @@ const CourseCard = (props) => {
 
 
 
-    teacherData && currentTime && currentDate && teacherData.aSubject.map((teacherSubject, indexSubject) => {
+    teacherData && currentTime && currentDate && teacherData.aSubject.map((teacherSubject) => {
 
 
 
