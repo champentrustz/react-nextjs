@@ -67,6 +67,21 @@ export default class studentCourse extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        const props = this.props;
+        const states = this.state;
+
+        if(JSON.stringify(props) !== JSON.stringify(nextProps)){
+            return true
+        }
+
+        if(JSON.stringify(states) !== JSON.stringify(nextState)){
+            return true
+        }
+        return false
+
+    }
+
     render () {
 
 

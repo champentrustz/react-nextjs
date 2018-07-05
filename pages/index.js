@@ -216,21 +216,24 @@ export default class index extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        const props = this.props;
+        const states = this.state;
 
-    static async getInitialProps () {
-
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const json = await res.json()
-        const message = "hello";
-
-        return {
-            json,
-            message
+        if(JSON.stringify(props) !== JSON.stringify(nextProps)){
+            return true
         }
+
+        if(JSON.stringify(states) !== JSON.stringify(nextState)){
+            return true
+        }
+        return false
+
     }
 
 
     render () {
+
 
 
         return (

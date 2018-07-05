@@ -14,6 +14,9 @@ export default class student extends Component {
         this.state = {
             checkInCode : '',
             checkOutCode : '',
+            question : '',
+            sendQuestion : '',
+            tabs : 1,
         };
         this.checkInClass = this.checkInClass.bind(this);
         this.checkOutClass = this.checkOutClass.bind(this);
@@ -21,6 +24,71 @@ export default class student extends Component {
         this.checkOutCodeChange = this.checkOutCodeChange.bind(this);
         this.checkInClass = this.checkInClass.bind(this);
         this.checkOutClass = this.checkOutClass.bind(this);
+        this.questionChange = this.questionChange.bind(this);
+        this.sendQuestion = this.sendQuestion.bind(this);
+        this.questionRealTime = this.questionRealTime.bind(this);
+        this.voteQuestion = this.voteQuestion.bind(this);
+        this.setStateTabs = this.setStateTabs.bind(this);
+    }
+
+    setStateTabs(index){
+        this.setState({tabs : index})
+    }
+
+    async questionRealTime(previousQuestionOther,previousQuestion) {
+        const courseID =  await localStorage.getItem("courseID");
+        const groupID =  await localStorage.getItem("groupID");
+        const studentID =  await localStorage.getItem("studentUsername");
+        const courseStartTime =  await localStorage.getItem("courseStartTime");
+        const courseEndTime =  await localStorage.getItem("courseEndTime");
+
+        const respQuestion = await fetch('http://localhost/ge_api/getOwnQuestion.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+
+                course_id : courseID,
+                group_id : groupID,
+                student_id : studentID,
+                course_start : courseStartTime,
+                course_end : courseEndTime,
+            }),
+        });
+
+        const dataQuestion = await respQuestion.json();
+
+        if(JSON.stringify(dataQuestion) !== JSON.stringify(previousQuestion)){
+            this.setState({dataQuestion : dataQuestion})
+        }
+
+
+
+
+        const respQuestionOther = await fetch('http://localhost/ge_api/getOtherQuestion.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+
+                course_id : courseID,
+                group_id : groupID,
+                student_id : studentID,
+                course_start : courseStartTime,
+                course_end : courseEndTime,
+            }),
+        });
+
+        const dataQuestionOther = await respQuestionOther.json();
+
+        if(JSON.stringify(dataQuestionOther) !== JSON.stringify(previousQuestionOther)){
+            this.setState({dataQuestionOther: dataQuestionOther})
+        }
+
+
+
     }
 
     checkInCodeChange(event){
@@ -30,6 +98,31 @@ export default class student extends Component {
     checkOutCodeChange(event){
         this.setState({checkOutCode: event.target.value});
     }
+
+    questionChange(event){
+        this.setState({question: event.target.value});
+    }
+
+    async voteQuestion(id){
+
+        const courseID =  await localStorage.getItem("courseID");
+        const groupID =  await localStorage.getItem("groupID");
+        const studentID =  await localStorage.getItem("studentUsername");
+        const courseStartTime =  await localStorage.getItem("courseStartTime");
+        const courseEndTime =  await localStorage.getItem("courseEndTime");
+
+        fetch('http://localhost/ge_api/voteQuestion.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_question_id : id,
+            }),
+        });
+
+    }
+
 
     async checkInClass(code){
 
@@ -54,7 +147,7 @@ export default class student extends Component {
             const studentLastName =  await localStorage.getItem("studentLastName");
             const courseStartTime =  await localStorage.getItem("courseStartTime");
             const courseEndTime =  await localStorage.getItem("courseEndTime");
-            const courseDate =  await localStorage.getItem("courseDate");
+
 
             this.setState({checkStatus : 'true'})
             const resp = await fetch('http://localhost/ge_api/checkInClass.php', {
@@ -82,6 +175,8 @@ export default class student extends Component {
         }
 
     }
+
+
 
     async checkOutClass(code){
 
@@ -119,10 +214,55 @@ export default class student extends Component {
     }
 
 
+    async sendQuestion(question){
+        if(question != ''){
+
+            const courseID =  await localStorage.getItem("courseID");
+            const groupID =  await localStorage.getItem("groupID");
+            const studentID =  await localStorage.getItem("studentUsername");
+            const courseStartTime =  await localStorage.getItem("courseStartTime");
+            const courseEndTime =  await localStorage.getItem("courseEndTime");
+
+            fetch('http://localhost/ge_api/createQuestion.php', {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    course_id : courseID,
+                    group_id : groupID,
+                    student_id : studentID,
+                    question : question
+                }),
+            });
+            this.setState({question : ''});
+
+            const respQuestion = await fetch('http://localhost/ge_api/getOwnQuestion.php', {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+
+                    course_id : courseID,
+                    group_id : groupID,
+                    student_id : studentID,
+                    course_start : courseStartTime,
+                    course_end : courseEndTime,
+                }),
+            });
+
+            const dataQuestion = await respQuestion.json();
+            this.setState({dataQuestion : dataQuestion})
+
+
+        }
+    }
+
+
     async componentDidMount(){
         const isStudent =  await localStorage.getItem("isStudent");
         const courseID =  await localStorage.getItem("courseID");
-        console.log(courseID)
 
         if(isStudent != 'true' || courseID == undefined){
             Router.replace('/student-course');
@@ -155,27 +295,81 @@ export default class student extends Component {
             });
             const data = await resp.json();
             const checkStatus = data.duplicate;
-            console.log(data)
             this.setState({checkStatus : checkStatus})
             if(this.state.checkStatus == 'true'){
                 this.setState({checkInStatus : data.status})
                 this.setState({checkInID : data.id})
             }
 
-            console.log(data.checkout_date);
-
             if(data.checkout_date != null){
                 this.setState({checkOutStatus : 'true'})
             }
+
+            const respQuestion = await fetch('http://localhost/ge_api/getOwnQuestion.php', {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+
+                    course_id : courseID,
+                    group_id : groupID,
+                    student_id : studentID,
+                    course_start : courseStartTime,
+                    course_end : courseEndTime,
+                }),
+            });
+
+            const dataQuestion = await respQuestion.json();
+
+            this.setState({dataQuestion : dataQuestion})
+
+            const respQuestionOther = await fetch('http://localhost/ge_api/getOtherQuestion.php', {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+
+                    course_id : courseID,
+                    group_id : groupID,
+                    student_id : studentID,
+                    course_start : courseStartTime,
+                    course_end : courseEndTime,
+                }),
+            });
+
+            const dataQuestionOther = await respQuestionOther.json();
+            this.setState({dataQuestionOther : dataQuestionOther});
+
+            setInterval(async()=>{
+                if(this.state.tabs == 2) {
+                    this.questionRealTime(await this.state.dataQuestionOther, await this.state.dataQuestion)
+                }
+                }, 300);
 
         }
 
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        const props = this.props;
+        const states = this.state;
 
+        if(JSON.stringify(props) !== JSON.stringify(nextProps)){
+            return true
+        }
+
+        if(JSON.stringify(states) !== JSON.stringify(nextState)){
+            return true
+        }
+       return false
+
+    }
 
     render () {
 
+        console.log('test')
 
 
         if (this.props.isLogin == 'student') {
@@ -196,7 +390,9 @@ export default class student extends Component {
                             <br/>
                     </div>
                         <div className="col-md-9">
-                            <TabsMenu/>
+                            <TabsMenu questionChange={this.questionChange} sendQuestion={this.sendQuestion} question={this.state.question}
+                            dataQuestion={this.state.dataQuestion} dataQuestionOther={this.state.dataQuestionOther} voteQuestion={this.voteQuestion}
+                             setStateTabs={this.setStateTabs}/>
                         </div>
                     </div>
 
