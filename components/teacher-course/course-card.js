@@ -129,7 +129,7 @@ const CourseCard = (props) => {
                             </div>
                             <div className="col-md-6">
                                 <p/>
-                                <button className="btn btn-warning btn-md btn-block text-light" onClick={() => props.manageClass(teacherSubject.subjectID,teacherGroup.groupID,teacherGroup.groupName,teacherSubject.subjectName)}>จัดการห้องเรียน</button>
+                                <button className="btn btn-warning btn-md btn-block text-light" onClick={() => props.manageClass(teacherSubject.subjectID,teacherGroup.groupID,teacherGroup.groupName,teacherSubject.subjectName,currentDate)}>จัดการห้องเรียน</button>
                                 <p/>
                             </div>
 

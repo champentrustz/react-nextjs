@@ -16,7 +16,7 @@ export default class student extends Component {
             checkOutCode : '',
             question : '',
             sendQuestion : '',
-            tabs : 1,
+            tabs : this.props.keyTabs,
         };
         this.checkInClass = this.checkInClass.bind(this);
         this.checkOutClass = this.checkOutClass.bind(this);
@@ -33,6 +33,10 @@ export default class student extends Component {
 
     setStateTabs(index){
         this.setState({tabs : index})
+        Router.push({
+            pathname: '/student',
+            query: { key: index }
+        })
     }
 
     async questionRealTime(previousQuestionOther,previousQuestion) {
@@ -264,6 +268,7 @@ export default class student extends Component {
         const isStudent =  await localStorage.getItem("isStudent");
         const courseID =  await localStorage.getItem("courseID");
 
+
         if(isStudent != 'true' || courseID == undefined){
             Router.replace('/student-course');
         }
@@ -367,9 +372,17 @@ export default class student extends Component {
 
     }
 
+    static getInitialProps ({ query: { key } }) {
+
+        const keyTabs = key;
+        return {
+            keyTabs
+        }
+    }
+
     render () {
 
-        console.log('test')
+
 
 
         if (this.props.isLogin == 'student') {
@@ -392,7 +405,7 @@ export default class student extends Component {
                         <div className="col-md-9">
                             <TabsMenu questionChange={this.questionChange} sendQuestion={this.sendQuestion} question={this.state.question}
                             dataQuestion={this.state.dataQuestion} dataQuestionOther={this.state.dataQuestionOther} voteQuestion={this.voteQuestion}
-                             setStateTabs={this.setStateTabs}/>
+                             setStateTabs={this.setStateTabs} tabsKey={this.state.tabs}/>
                         </div>
                     </div>
 

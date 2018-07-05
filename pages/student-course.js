@@ -29,7 +29,10 @@ export default class studentCourse extends Component {
         localStorage.setItem('courseEndTime', courseEndTime);
         localStorage.setItem('semester', semester);
         localStorage.setItem('year', year);
-        Router.push('/student');
+        Router.push({
+            pathname: '/student',
+            query: { key: '1' }
+        })
     }
 
 

@@ -4,39 +4,41 @@ import React from 'react'
 
     const TabsMenu = (props) => {
 
+        const tabsKey = props.tabsKey;
+
         return (
             <div className="card">
                 <div className="col-md-12">
                     <p/>
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item" onClick={()=>props.setStateTabs(1)}>
-                            <a className="nav-link active" id="home-tab" data-toggle="tab" href="#file" role="tab"
+                            <a className={tabsKey == 1 ? 'nav-link active'  : 'nav-link'} id="home-tab" data-toggle="tab" href="#file" role="tab"
                                aria-controls="home" aria-selected="true">เอกสารประกอบการสอน</a>
                         </li>
                         <li className="nav-item" onClick={()=>props.setStateTabs(2)}>
-                            <a className="nav-link" id="contact-tab" data-toggle="tab" href="#question" role="tab"
+                            <a className={tabsKey == 2 ? 'nav-link active'  : 'nav-link'} id="contact-tab" data-toggle="tab" href="#question" role="tab"
                                aria-controls="contact" aria-selected="false">คำถาม</a>
                         </li>
                         <li className="nav-item" onClick={()=>props.setStateTabs(3)}>
-                            <a className="nav-link" id="contact-tab" data-toggle="tab" href="#excercise" role="tab"
+                            <a className={tabsKey == 3 ? 'nav-link active'  : 'nav-link'} id="contact-tab" data-toggle="tab" href="#excercise" role="tab"
                                aria-controls="contact" aria-selected="false">แบบฝึกหัด</a>
                         </li>
                         <li className="nav-item" onClick={()=> props.setStateTabs(4)}>
-                            <a className="nav-link" id="contact-tab" data-toggle="tab" href="#excercise-score"
+                            <a className={tabsKey == 4 ? 'nav-link active'  : 'nav-link'} id="contact-tab" data-toggle="tab" href="#excercise-score"
                                role="tab"
                                aria-controls="contact" aria-selected="false">คะแนนแบบฝึกหัด</a>
                         </li>
                     </ul>
                     <div className="tab-content" id="myTabContent">
 
-                        <div className="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab">
+                        <div className={tabsKey == 1 ? 'tab-pane fade show active'  : 'tab-pane fade'} id="file" role="tabpanel" aria-labelledby="file-tab">
                             <div className="col-md-12">
                                 <p/>
                                 เอกสารประกอบการสอน
                                 <p/>
                             </div>
                         </div>
-                        <div className="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
+                        <div className={tabsKey == 2 ? 'tab-pane fade show active'  : 'tab-pane fade'} id="question" role="tabpanel" aria-labelledby="question-tab">
                             <div className="col-md-12">
                                 <p/>
                                 <CardSendQuestion questionChange={props.questionChange}
@@ -51,7 +53,7 @@ import React from 'react'
                             </div>
                         </div>
 
-                        <div className="tab-pane fade" id="excercise" role="tabpanel" aria-labelledby="excercise-tab">
+                        <div className={tabsKey == 3 ? 'tab-pane fade show active'  : 'tab-pane fade'} id="excercise" role="tabpanel" aria-labelledby="excercise-tab">
                             <div className="col-md-12">
                                 <p/>
                                 แบบฝึกหัด
@@ -59,7 +61,7 @@ import React from 'react'
                             </div>
                         </div>
 
-                        <div className="tab-pane fade" id="excercise-score" role="tabpanel"
+                        <div className={tabsKey == 4 ? 'tab-pane fade show active'  : 'tab-pane fade'} id="excercise-score" role="tabpanel"
                              aria-labelledby="excercise-score-tab">
                             <div className="col-md-12">
                                 <p/>
@@ -110,6 +112,7 @@ const CardOwnQuestion = (props) => {
 
 
     const dataQuestion = props.dataQuestion;
+
     let card = [];
 
 
