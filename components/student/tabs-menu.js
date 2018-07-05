@@ -1,27 +1,29 @@
 import React from 'react'
 
 
-const TabsMenu = (props) => {
 
-    return (
+    const TabsMenu = (props) => {
+
+        return (
             <div className="card">
                 <div className="col-md-12">
                     <p/>
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                        <li className="nav-item">
+                        <li className="nav-item" onClick={()=>props.setStateTabs(1)}>
                             <a className="nav-link active" id="home-tab" data-toggle="tab" href="#file" role="tab"
                                aria-controls="home" aria-selected="true">เอกสารประกอบการสอน</a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" onClick={()=>props.setStateTabs(2)}>
                             <a className="nav-link" id="contact-tab" data-toggle="tab" href="#question" role="tab"
                                aria-controls="contact" aria-selected="false">คำถาม</a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" onClick={()=>props.setStateTabs(3)}>
                             <a className="nav-link" id="contact-tab" data-toggle="tab" href="#excercise" role="tab"
                                aria-controls="contact" aria-selected="false">แบบฝึกหัด</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" id="contact-tab" data-toggle="tab" href="#excercise-score" role="tab"
+                        <li className="nav-item" onClick={()=> props.setStateTabs(4)}>
+                            <a className="nav-link" id="contact-tab" data-toggle="tab" href="#excercise-score"
+                               role="tab"
                                aria-controls="contact" aria-selected="false">คะแนนแบบฝึกหัด</a>
                         </li>
                     </ul>
@@ -37,7 +39,14 @@ const TabsMenu = (props) => {
                         <div className="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
                             <div className="col-md-12">
                                 <p/>
-                                คำถาม
+                                <CardSendQuestion questionChange={props.questionChange}
+                                                  sendQuestion={props.sendQuestion} question={props.question}/>
+                                <br/>
+                                <CardOwnQuestion dataQuestion={props.dataQuestion} voteQuestion={props.voteQuestion}/>
+                                <CardOtherQuestion dataQuestionOther={props.dataQuestionOther} voteQuestion={props.voteQuestion}/>
+                                <br/>
+
+
                                 <p/>
                             </div>
                         </div>
@@ -50,7 +59,8 @@ const TabsMenu = (props) => {
                             </div>
                         </div>
 
-                        <div className="tab-pane fade" id="excercise-score" role="tabpanel" aria-labelledby="excercise-score-tab">
+                        <div className="tab-pane fade" id="excercise-score" role="tabpanel"
+                             aria-labelledby="excercise-score-tab">
                             <div className="col-md-12">
                                 <p/>
                                 คะแนนแบบฝึกหัด
@@ -61,7 +71,116 @@ const TabsMenu = (props) => {
                     </div>
                 </div>
             </div>
+        )
+     }
+
+
+
+
+const CardSendQuestion = (props) => {
+
+    let alertQuestion = null;
+
+    if(props.question == ''){
+        alertQuestion = (<label className="text-center text-danger">*กรุณากรอกคำถาม</label>)
+    }
+
+
+    return (
+
+
+        <div className="card">
+            <div className="card-header text-primary">คำถาม</div>
+            <div className="card-body">
+                <input className="form-control" type="text" value={props.question} onChange={props.questionChange} required="true"/>
+                {alertQuestion}
+            </div>
+            <div className="card-footer">
+                <button className="btn btn-success btn-block" onClick={() => props.sendQuestion(props.question)}>บันทึก</button>
+            </div>
+
+        </div>
+
+
     )
 }
+
+const CardOwnQuestion = (props) => {
+
+
+
+    const dataQuestion = props.dataQuestion;
+    let card = [];
+
+
+    dataQuestion && dataQuestion.map((dataQuestion,index) => {
+
+        card.push(
+            <div key={index}>
+            <div className="card">
+                <div className="card-header">
+                    <div className="row">
+                        <div className="col-md-11 col-sm-10">
+                    <span className="fa fa-star text-warning "/> คำถาม
+                        </div>
+                        <div className="col-md-1 col-sm-2">
+                            <span className="badge badge-pill badge-danger" onClick={() => props.voteQuestion(dataQuestion.id)} style={{'cursor': 'pointer'}}>{dataQuestion.vote}</span>
+                        </div>
+                </div>
+                </div>
+                <div className="card-body">
+                   <h6>คำถาม : {dataQuestion.question}</h6>
+                    <h6 className="text-primary">คำตอบ : {dataQuestion.answer}</h6>
+                </div>
+
+            </div>
+                <br/>
+            </div>
+
+        )
+    })
+
+    return card;
+
+}
+
+const CardOtherQuestion = (props) => {
+
+    const dataQuestionOther = props.dataQuestionOther;
+    let card = [];
+
+    dataQuestionOther && dataQuestionOther.map((dataQuestionOther,index) => {
+
+        card.push(
+            <div key={index}>
+                <div className="card">
+                    <div className="card-header">
+                        <div className="row">
+                            <div className="col-md-11 col-sm-10">
+                               คำถาม
+                            </div>
+                            <div className="col-md-1 col-sm-2">
+                                <span className="badge badge-pill badge-danger" onClick={() => props.voteQuestion(dataQuestionOther.id)} style={{'cursor': 'pointer'}}>{dataQuestionOther.vote}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-body">
+                        <h6>คำถาม : {dataQuestionOther.question}</h6>
+                        <h6 className="text-primary">คำตอบ : {dataQuestionOther.answer}</h6>
+                    </div>
+
+                </div>
+                <br/>
+            </div>
+
+        )
+    })
+
+    return card;
+
+
+}
+
+
 
 export default TabsMenu
