@@ -21,8 +21,8 @@ export default class teacherCourse extends Component {
     intoClass(courseID,groupID, groupName , courseDate,courseName,courseStartTime,courseEndTime, scheduleID, year , semester){
 
         localStorage.setItem('courseID', courseID);
-        localStorage.setItem('courseSection', courseSection);
-        localStorage.setItem('sectionName', sectionName);
+        localStorage.setItem('groupID', groupID);
+        localStorage.setItem('groupName', groupName);
         localStorage.setItem('courseDate', courseDate);
         localStorage.setItem('courseName', courseName);
         localStorage.setItem('courseStartTime', courseStartTime);
@@ -31,10 +31,13 @@ export default class teacherCourse extends Component {
         localStorage.setItem('semester', semester);
         localStorage.setItem('year', year);
         localStorage.setItem('statusClass', 'class');
-        Router.push("/teacher");
+        Router.push({
+            pathname: '/teacher',
+            query: { key: '1' }
+        })
     }
 
-    manageClass(courseID,groupID,groupName,courseName,courseDate){
+    manageClass(courseID,groupID,groupName,courseName){
 
 
         localStorage.setItem('courseID', courseID);
@@ -42,9 +45,9 @@ export default class teacherCourse extends Component {
         localStorage.setItem('groupName', groupName);
         localStorage.setItem('courseName', courseName);
         localStorage.setItem('statusClass', 'manage');
-        localStorage.setItem('courseDate', courseDate);
 
-        window.open('/teacher','class-manage','width=1200,height=700');
+        window.open('/teacher?key=1','class-manage','width=1200,height=700');
+
     }
 
     async componentDidMount(){
@@ -111,7 +114,7 @@ export default class teacherCourse extends Component {
 
 
                         <CourseCard data={this.state.data_course_teacher} currentDate={this.state.current_date} currentTime={this.state.current_time}
-                        alertNoClass={this.alertNoClass} manageClass={this.manageClass}/>
+                        alertNoClass={this.alertNoClass} manageClass={this.manageClass} intoClass={this.intoClass}/>
 
 
                 </div>

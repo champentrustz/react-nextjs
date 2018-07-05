@@ -17,6 +17,8 @@ export default class student extends Component {
             question : '',
             sendQuestion : '',
             tabs : this.props.keyTabs,
+            voteOwn : [],
+            voteOther : [],
         };
         this.checkInClass = this.checkInClass.bind(this);
         this.checkOutClass = this.checkOutClass.bind(this);
@@ -63,8 +65,17 @@ export default class student extends Component {
 
         const dataQuestion = await respQuestion.json();
 
+
         if(JSON.stringify(dataQuestion) !== JSON.stringify(previousQuestion)){
             this.setState({dataQuestion : dataQuestion})
+            this.setState({
+                voteOwn: []
+            })
+            dataQuestion.forEach((data) => {
+                this.setState({
+                    voteOwn: this.state.voteOwn.concat([data.vote])
+                })
+            });
         }
 
 
@@ -87,8 +98,18 @@ export default class student extends Component {
 
         const dataQuestionOther = await respQuestionOther.json();
 
+
+
         if(JSON.stringify(dataQuestionOther) !== JSON.stringify(previousQuestionOther)){
             this.setState({dataQuestionOther: dataQuestionOther})
+            this.setState({
+                voteOther: []
+            })
+            dataQuestionOther.forEach((data) => {
+                this.setState({
+                    voteOther: this.state.voteOther.concat([data.vote])
+                })
+            });
         }
 
 
@@ -107,13 +128,8 @@ export default class student extends Component {
         this.setState({question: event.target.value});
     }
 
-    async voteQuestion(id){
+    async voteQuestion(id,type,index){
 
-        const courseID =  await localStorage.getItem("courseID");
-        const groupID =  await localStorage.getItem("groupID");
-        const studentID =  await localStorage.getItem("studentUsername");
-        const courseStartTime =  await localStorage.getItem("courseStartTime");
-        const courseEndTime =  await localStorage.getItem("courseEndTime");
 
         fetch('http://localhost/ge_api/voteQuestion.php', {
             method: 'post',
@@ -124,6 +140,26 @@ export default class student extends Component {
                 course_question_id : id,
             }),
         });
+
+        if(type == 'own'){
+
+            let  voteOwn = this.state.voteOwn.slice(); //creates the clone of the state
+
+            voteOwn[index] = ''+(parseInt(voteOwn[index]) +1);
+
+            this.setState({voteOwn: voteOwn});
+        }
+        else if(type == 'other'){
+
+            let  voteOther = this.state.voteOther.slice(); //creates the clone of the state
+            voteOther[index] = ''+(parseInt(voteOther[index]) +1);
+
+            this.setState({voteOther: voteOther});
+
+
+
+        }
+
 
     }
 
@@ -327,6 +363,12 @@ export default class student extends Component {
 
             const dataQuestion = await respQuestion.json();
 
+            dataQuestion.map((data) => {
+                this.setState({
+                    voteOwn: this.state.voteOwn.concat([data.vote])
+                })
+            });
+
             this.setState({dataQuestion : dataQuestion})
 
             const respQuestionOther = await fetch('http://localhost/ge_api/getOtherQuestion.php', {
@@ -345,13 +387,21 @@ export default class student extends Component {
             });
 
             const dataQuestionOther = await respQuestionOther.json();
+
+            dataQuestionOther.map((data) => {
+                this.setState({
+                    voteOther: this.state.voteOther.concat([data.vote])
+                })
+            });
+
+
             this.setState({dataQuestionOther : dataQuestionOther});
 
             setInterval(async()=>{
                 if(this.state.tabs == 2) {
                     this.questionRealTime(await this.state.dataQuestionOther, await this.state.dataQuestion)
                 }
-                }, 300);
+                }, 1000);
 
         }
 
@@ -383,8 +433,6 @@ export default class student extends Component {
     render () {
 
 
-
-
         if (this.props.isLogin == 'student') {
 
             return (
@@ -405,7 +453,7 @@ export default class student extends Component {
                         <div className="col-md-9">
                             <TabsMenu questionChange={this.questionChange} sendQuestion={this.sendQuestion} question={this.state.question}
                             dataQuestion={this.state.dataQuestion} dataQuestionOther={this.state.dataQuestionOther} voteQuestion={this.voteQuestion}
-                             setStateTabs={this.setStateTabs} tabsKey={this.state.tabs}/>
+                             setStateTabs={this.setStateTabs} tabsKey={this.state.tabs} voteOwn={this.state.voteOwn} voteOther={this.state.voteOther}/>
                         </div>
                     </div>
 

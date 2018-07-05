@@ -15,11 +15,15 @@ class Header extends React.Component {
                           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
                           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
                           crossOrigin="anonymous"/>
+                    <link rel="stylesheet"
+                          href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
                     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet"/>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                                 crossOrigin="anonymous"/>
+                        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"/>
+                        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"/>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
                                 integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
                                 crossOrigin="anonymous"/>
@@ -63,7 +67,19 @@ const ButtonLogin = (props) => {
 
 class Navbar extends React.Component {
 
+    shouldComponentUpdate(nextProps){
+        const props = this.props;
 
+        if(JSON.stringify(props) !== JSON.stringify(nextProps)){
+            return true
+        }
+
+        return false;
+
+
+
+
+    }
 
     render () {
         return (

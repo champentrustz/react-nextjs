@@ -73,7 +73,7 @@ const CourseCard = (props) => {
                 })
 
 
-                if (haveCourse === 1) {
+                if (haveCourse === 0) {
                     card.push(
                         <div className="col-md-4" key={index}>
 
@@ -88,7 +88,7 @@ const CourseCard = (props) => {
                             <div className="row">
                             <div className="col-md-6">
                                 <p/>
-                                <button className="btn btn-success btn-md btn-block">เข้าห้องเรียน</button>
+                                <button className="btn btn-success btn-md btn-block" onClick={() => props.intoClass(teacherSubject.subjectID, teacherGroup.groupID, teacherGroup.groupName ,currentDate, teacherSubject.subjectName, scheduleStartTime, scheduleEndTime, scheduleID , year , semester)}>เข้าห้องเรียน</button>
                                 <p/>
                             </div>
                             <div className="col-md-6">
@@ -108,7 +108,7 @@ const CourseCard = (props) => {
                         </div>
                     )
                 }
-                if (haveCourse === 0) {
+                if (haveCourse === 1) {
 
                     card.push(
                         <div className="col-md-4" key={index}>
@@ -129,7 +129,7 @@ const CourseCard = (props) => {
                             </div>
                             <div className="col-md-6">
                                 <p/>
-                                <button className="btn btn-warning btn-md btn-block text-light" onClick={() => props.manageClass(teacherSubject.subjectID,teacherGroup.groupID,teacherGroup.groupName,teacherSubject.subjectName,currentDate)}>จัดการห้องเรียน</button>
+                                <button className="btn btn-warning btn-md btn-block text-light" onClick={() => props.manageClass(teacherSubject.subjectID,teacherGroup.groupID,teacherGroup.groupName,teacherSubject.subjectName)}>จัดการห้องเรียน</button>
                                 <p/>
                             </div>
 

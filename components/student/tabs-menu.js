@@ -44,8 +44,8 @@ import React from 'react'
                                 <CardSendQuestion questionChange={props.questionChange}
                                                   sendQuestion={props.sendQuestion} question={props.question}/>
                                 <br/>
-                                <CardOwnQuestion dataQuestion={props.dataQuestion} voteQuestion={props.voteQuestion}/>
-                                <CardOtherQuestion dataQuestionOther={props.dataQuestionOther} voteQuestion={props.voteQuestion}/>
+                                <CardOwnQuestion dataQuestion={props.dataQuestion} voteQuestion={props.voteQuestion} voteOwn={props.voteOwn}/>
+                                <CardOtherQuestion dataQuestionOther={props.dataQuestionOther} voteQuestion={props.voteQuestion} voteOther={props.voteOther}/>
                                 <br/>
 
 
@@ -124,15 +124,14 @@ const CardOwnQuestion = (props) => {
                 <div className="card-header">
                     <div className="row">
                         <div className="col-md-11 col-sm-10">
-                    <span className="fa fa-star text-warning "/> คำถาม
+                    <span className="fa fa-star text-warning "/> คำถาม : {dataQuestion.question}
                         </div>
                         <div className="col-md-1 col-sm-2">
-                            <span className="badge badge-pill badge-danger" onClick={() => props.voteQuestion(dataQuestion.id)} style={{'cursor': 'pointer'}}>{dataQuestion.vote}</span>
+                            <span className="badge badge-pill badge-danger" onClick={() => props.voteQuestion(dataQuestion.id,'own',index)} style={{'cursor': 'pointer'}}>{props.voteOwn[index]}</span>
                         </div>
                 </div>
                 </div>
                 <div className="card-body">
-                   <h6>คำถาม : {dataQuestion.question}</h6>
                     <h6 className="text-primary">คำตอบ : {dataQuestion.answer}</h6>
                 </div>
 
@@ -152,7 +151,7 @@ const CardOtherQuestion = (props) => {
     const dataQuestionOther = props.dataQuestionOther;
     let card = [];
 
-    dataQuestionOther && dataQuestionOther.map((dataQuestionOther,index) => {
+    dataQuestionOther && dataQuestionOther.map((dataQuestionOther, index) => {
 
         card.push(
             <div key={index}>
@@ -160,22 +159,22 @@ const CardOtherQuestion = (props) => {
                     <div className="card-header">
                         <div className="row">
                             <div className="col-md-11 col-sm-10">
-                               คำถาม
+                                คำถาม : {dataQuestionOther.question}
                             </div>
                             <div className="col-md-1 col-sm-2">
-                                <span className="badge badge-pill badge-danger" onClick={() => props.voteQuestion(dataQuestionOther.id)} style={{'cursor': 'pointer'}}>{dataQuestionOther.vote}</span>
+                                <span className="badge badge-pill badge-danger"
+                                      onClick={() => props.voteQuestion(dataQuestionOther.id,'other',index)}
+                                      style={{'cursor': 'pointer'}}>{props.voteOther[index]}</span>
                             </div>
                         </div>
                     </div>
                     <div className="card-body">
-                        <h6>คำถาม : {dataQuestionOther.question}</h6>
                         <h6 className="text-primary">คำตอบ : {dataQuestionOther.answer}</h6>
                     </div>
 
                 </div>
                 <br/>
             </div>
-
         )
     })
 
