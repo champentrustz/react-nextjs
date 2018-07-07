@@ -15,6 +15,10 @@ export default class teacher extends Component {
             note : [],
             status : [],
             answer : [],
+            fileUpload : '',
+            fileName :'',
+            statusUpload : '',
+            statusDelete : ''
 
         };
         this.changeCheckInCode = this.changeCheckInCode.bind(this);
@@ -24,6 +28,115 @@ export default class teacher extends Component {
         this.statusChange = this.statusChange.bind(this);
         this.answerChange = this.answerChange.bind(this);
         this.questionRealTime = this.questionRealTime.bind(this);
+        this.fileChange = this.fileChange.bind(this);
+        this.uploadFile = this.uploadFile.bind(this);
+        this.deleteFile = this.deleteFile.bind(this);
+        this.downloadFile = this.downloadFile.bind(this);
+    }
+
+    async downloadFile(file_name){
+
+        const courseID = await localStorage.getItem("courseID");
+        const groupID = await localStorage.getItem("groupID");
+
+
+        window.open('http://localhost/ge_api/downloadFile.php?course_id='+courseID+'&group_id='+groupID+'&file_name_doc='+file_name);
+
+    }
+
+    async deleteFile(file_name){
+
+        const courseID = await localStorage.getItem("courseID");
+        const groupID = await localStorage.getItem("groupID");
+
+        const respDelete = await fetch('http://localhost/ge_api/deleteFile.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_id : courseID,
+                group_id : groupID,
+                file_name_doc : file_name
+            }),
+        });
+        const dataDeleteFile = await respDelete.json();
+
+
+        this.setState({statusDelete:dataDeleteFile})
+
+
+
+        const respGetFile = await fetch('http://localhost/ge_api/getFile.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_id : courseID,
+                group_id : groupID,
+            }),
+        });
+        const dataGetFile = await respGetFile.json();
+
+        this.setState({dataFile : dataGetFile})
+
+        setTimeout(()=>{
+            this.setState({statusDelete:''})
+        }, 4000);
+
+
+    }
+
+    async uploadFile(){
+
+        const courseID = await localStorage.getItem("courseID");
+        const groupID = await localStorage.getItem("groupID");
+         const formData = new FormData();
+        formData.append('file_upload',this.state.fileUpload);
+        formData.append('course_id',courseID);
+        formData.append('group_id',groupID);
+        const respFile = await fetch('http://localhost/ge_api/uploadFile.php', {
+            method: 'post',
+
+            body: formData
+
+        });
+
+        const dataFile = await respFile.json();
+
+        this.setState({statusUpload:dataFile})
+
+        this.setState({fileName:''})
+
+        const respGetFile = await fetch('http://localhost/ge_api/getFile.php', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                course_id : courseID,
+                group_id : groupID,
+            }),
+        });
+        const dataGetFile = await respGetFile.json();
+
+        this.setState({dataFile : dataGetFile})
+
+        setTimeout(()=>{
+            this.setState({statusUpload:''})
+        }, 4000);
+
+    }
+
+
+    fileChange(event){
+
+        this.setState({fileName:event.target.value});
+        this.setState({fileUpload:event.target.files[0]});
+
+
+
     }
 
     async questionRealTime(previousQuestion) {
@@ -171,6 +284,21 @@ export default class teacher extends Component {
             this.setState({classStatus : classStatus})
 
             if(statusClass == 'class'){
+
+                const respFile = await fetch('http://localhost/ge_api/getFile.php', {
+                    method: 'post',
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                    body: JSON.stringify({
+                        course_id : courseID,
+                        group_id : groupID,
+                    }),
+                });
+                const dataFile = await respFile.json();
+
+                this.setState({dataFile : dataFile})
+
 
                 const respQuestion = await fetch('http://localhost/ge_api/getQuestionAll.php', {
                     method: 'post',
@@ -410,8 +538,6 @@ export default class teacher extends Component {
 
     render () {
 
-
-
         if (this.props.isLogin == 'teacher') {
 
             return (
@@ -432,7 +558,10 @@ export default class teacher extends Component {
                             <TabsMenu setStateTabs={this.setStateTabs} tabsKey={this.state.tabs} statusClass={this.state.statusClass}
                                       dataCheckStudent={this.state.dataCheckStudent} note={this.state.note} noteChange={this.noteChange}
                                       status={this.state.status} statusChange={this.statusChange} dataQuestion={this.state.dataQuestion}
-                                      answerChange={this.answerChange} answer={this.state.answer}/>
+                                      answerChange={this.answerChange} answer={this.state.answer} fileUpload={this.state.fileUpload}
+                                      fileChange={this.fileChange} uploadFile={this.uploadFile} fileName={this.state.fileName}
+                                      statusUpload={this.state.statusUpload} dataFile={this.state.dataFile} deleteFile={this.deleteFile}
+                                      statusDelete={this.state.statusDelete} downloadFile={this.downloadFile}/>
                         </div>
                     </div>
 

@@ -31,6 +31,17 @@ export default class student extends Component {
         this.questionRealTime = this.questionRealTime.bind(this);
         this.voteQuestion = this.voteQuestion.bind(this);
         this.setStateTabs = this.setStateTabs.bind(this);
+        this.downloadFile = this.downloadFile.bind(this);
+    }
+
+    async downloadFile(file_name){
+
+        const courseID = await localStorage.getItem("courseID");
+        const groupID = await localStorage.getItem("groupID");
+
+
+        window.open('http://localhost/ge_api/downloadFile.php?course_id='+courseID+'&group_id='+groupID+'&file_name_doc='+file_name);
+
     }
 
     setStateTabs(index){
@@ -295,6 +306,16 @@ export default class student extends Component {
             const dataQuestion = await respQuestion.json();
             this.setState({dataQuestion : dataQuestion})
 
+            this.setState({
+                voteOwn: []
+            })
+
+            dataQuestion.forEach((data) => {
+                this.setState({
+                    voteOwn: this.state.voteOwn.concat([data.vote])
+                })
+            });
+
 
         }
     }
@@ -321,6 +342,21 @@ export default class student extends Component {
             this.setState({groupName : groupName})
             this.setState({courseID : courseID})
             this.setState({groupID : groupID})
+
+            const respFile = await fetch('http://localhost/ge_api/getFile.php', {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    course_id : courseID,
+                    group_id : groupID,
+                }),
+            });
+            const dataFile = await respFile.json();
+
+            this.setState({dataFile : dataFile})
+
             const resp = await fetch('http://localhost/ge_api/checkStudentCheckIn.php', {
                 method: 'post',
                 headers: {
@@ -453,7 +489,8 @@ export default class student extends Component {
                         <div className="col-md-9">
                             <TabsMenu questionChange={this.questionChange} sendQuestion={this.sendQuestion} question={this.state.question}
                             dataQuestion={this.state.dataQuestion} dataQuestionOther={this.state.dataQuestionOther} voteQuestion={this.voteQuestion}
-                             setStateTabs={this.setStateTabs} tabsKey={this.state.tabs} voteOwn={this.state.voteOwn} voteOther={this.state.voteOther}/>
+                             setStateTabs={this.setStateTabs} tabsKey={this.state.tabs} voteOwn={this.state.voteOwn} voteOther={this.state.voteOther}
+                            downloadFile={this.downloadFile} dataFile={this.state.dataFile}/>
                         </div>
                     </div>
 

@@ -34,7 +34,7 @@ import React from 'react'
                         <div className={tabsKey == 1 ? 'tab-pane fade show active'  : 'tab-pane fade'} id="file" role="tabpanel" aria-labelledby="file-tab">
                             <div className="col-md-12">
                                 <p/>
-                                เอกสารประกอบการสอน
+                                <ShowFile dataFile={props.dataFile} downloadFile={props.downloadFile}/>
                                 <p/>
                             </div>
                         </div>
@@ -179,6 +179,61 @@ const CardOtherQuestion = (props) => {
     })
 
     return card;
+
+
+}
+
+const ShowFile = (props) => {
+
+    const dataFile = props.dataFile;
+
+    if(dataFile && dataFile.length === 0){
+
+        return(
+            <div>
+                <div className="card">
+                    <div className="card-header">เอกสาร</div>
+                    <div className="card-body">
+
+                  <span className="text-danger">ไม่พบเอกสารประกอบการสอน</span>
+                    </div>
+
+                </div>
+            </div>
+        )
+
+    }
+    else{
+        return(
+            <div>
+                <div className="card">
+                    <div className="card-header">เอกสาร</div>
+                    <div className="card-body">
+                        <table className="table table-hover">
+                            <tbody>
+
+                            {
+                                dataFile && dataFile.map((dataFile,index) =>
+                                    <tr key={index}>
+                                        <td width="70%">
+                                            {dataFile.name}
+                                        </td>
+                                        <td>
+                                            <button className="btn btn-warning text-light" onClick={()=>props.downloadFile(dataFile.name)}>ดาวน์โหลด</button>
+                                        </td>
+
+                                    </tr>
+
+                                )
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
 
 
 }

@@ -44,7 +44,11 @@ const TabsMenu = (props) => {
                         <div className={tabsKey == 1 ? 'tab-pane fade show active'  : 'tab-pane fade'} id="file" role="tabpanel" aria-labelledby="file-tab">
                             <div className="col-md-12">
                                 <p/>
-                                เอกสารประกอบการสอน
+                                <FileUpload fileUpload={props.fileUpload} fileChange={props.fileChange} uploadFile={props.uploadFile} fileName={props.fileName}
+                                            statusUpload={props.statusUpload}/>
+                                <br/>
+                                <ShowFile dataFile={props.dataFile} deleteFile={props.deleteFile} statusDelete={props.statusDelete}
+                                          downloadFile={props.downloadFile}/>
                                 <p/>
                             </div>
                         </div>
@@ -52,7 +56,7 @@ const TabsMenu = (props) => {
                             <div className="col-md-12">
                                 <p/>
                                 <CardShowStudentCheckIn dataCheckStudent={dataCheckStudent} note={props.note} noteChange={props.noteChange}
-                                status={props.status} statusChange={props.statusChange}/>
+                                status={props.status} statusChange={props.statusChange} />
                                 <p/>
                             </div>
                         </div>
@@ -115,7 +119,7 @@ const CardShowStudentCheckIn = (props) => {
                     <td className="text-center">{student.student_id}</td>
                     <td>{student.student_first_name} {student.student_last_name}</td>
                     <td className="text-center">
-                        <select className="form-control" value={props.status[index]} onChange={(e)=> props.statusChange(e,index,student.id)}>
+                        <select className="form-control"  value={props.status[index]} onChange={(e)=> props.statusChange(e,index,student.id)}>
                             <option value='NORMAL' selected={student.status == 'NORMAL'}>มาเรียน</option>
                             <option value='LATE' selected={student.status == 'LATE'}>มาสาย</option>
                             <option value='ABSENT' selected={student.status == 'ABSENT'}>ขาดเรียน</option>
@@ -191,6 +195,109 @@ const CardQuestion = (props) => {
 
     return card;
 
+
+}
+
+const FileUpload = (props) => {
+
+    let alertStatus = null;
+
+
+
+
+if(props.statusUpload) {
+    if(props.statusUpload.type === "wrong"){
+
+        alertStatus = (<div className="alert alert-danger" role="alert">
+            {props.statusUpload.status}
+        </div>)
+
+
+    }
+    else if(props.statusUpload.type === "success"){
+
+        alertStatus = (<div className="alert alert-success" role="alert">
+            {props.statusUpload.status}
+        </div>)
+
+
+    }
+}
+
+
+    return(
+        <div>
+        {alertStatus}
+        <div className="card">
+            <div className="card-body">
+                <input type="file" className="form-control-file" value={props.fileName} onChange={props.fileChange}/>
+                <br/>
+                <button className="btn btn-primary" onClick={props.uploadFile}>อัพโหลด</button>
+            </div>
+        </div>
+        </div>
+    )
+
+}
+
+const ShowFile = (props) => {
+
+const dataFile = props.dataFile;
+
+    let alertStatus = null;
+
+    if(props.statusDelete) {
+        if(props.statusDelete.type === "wrong"){
+
+            alertStatus = (<div className="alert alert-danger" role="alert">
+                {props.statusDelete.status}
+            </div>)
+
+
+        }
+        else if(props.statusDelete.type === "success"){
+
+            alertStatus = (<div className="alert alert-success" role="alert">
+                {props.statusDelete.status}
+            </div>)
+
+
+        }
+    }
+
+
+    return(
+        <div>
+            {alertStatus}
+            <div className="card">
+                <div className="card-header">เอกสาร</div>
+                <div className="card-body">
+                    <table className="table table-hover">
+                        <tbody>
+
+                    {
+                        dataFile && dataFile.map((dataFile,index) =>
+                            <tr key={index}>
+                                <td width="70%">
+                                    {dataFile.name}
+                                </td>
+                                <td>
+                                    <button className="btn btn-warning text-light" onClick={()=>props.downloadFile(dataFile.name)}>ดาวน์โหลด</button>
+                                </td>
+                                <td>
+                                    <button className="btn btn-danger" onClick={()=>props.deleteFile(dataFile.name)}>ลบ</button>
+                                </td>
+
+                            </tr>
+
+                        )
+                    }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    )
 
 }
 
